@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom'
 // between routes.
 const Header = () => (
   <header>
+  <h1> Ticket Purchase Conversational Mix </h1>
     <nav>
       <ul>
-        <li><Link to='/'>PAYMENT</Link></li>
-        <li><Link to='/categories'>ALL CATEGORIES</Link></li>
-        <li><Link to='/details'>DETAILS</Link></li>
+        <li className="navMenu"><Link to='/'>PAYMENT</Link></li>
+        <li className="navMenu"><Link to='/categories'>ALL CATEGORIES</Link></li>
+        <li className="navMenu"><Link to='/details'>DETAILS</Link></li>
       </ul>
     </nav>
   </header>

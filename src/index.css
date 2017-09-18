@@ -3,3 +3,88 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+/**** Header ****/
+
+header {
+    background-color: #51436f;
+    height: 150px;
+    margin-top: -21px;
+}
+header ul {
+    margin-top: 50px;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    }
+
+header li a {
+     text-decoration: none;
+     display: inline;
+     margin-left: 50px;
+     color: white;
+}
+
+header li a:hover{
+     text-decoration: none;
+     display: inline;
+     margin-left: 50px;
+     color: #79d888;
+}
+
+header ul .navMenu {
+    text-decoration: none;
+     display: inline;
+     margin-left: 50px;
+     color: white;
+}
+
+header h1 {
+    margin-left: 100px;
+    color: white;
+}
+
+/**** Payment ****/
+#PaymentPanel {
+    margin-top: -20px;
+    background-color: #5d4a79;
+    color: white;
+}
+
+#PaymentPanel p, h1 {
+    margin-left: 50px;
+}
+
+#PaymentPanel p{
+padding-top: 30px;
+}
+
+#PaymentPanel h1 {
+padding-bottom: 30px;
+}
+
+/**** Categories ****/
+
+.chart {
+    background-color: red;
+}
+.Pi {
+    height: 300px;
+    width:  400px;
+    border: 1px black solid;
+    float: left;
+    margin: 30px 30px;
+}
+
+.Bar {
+    height: 300px;
+    width:  400px;
+    border: 1px black solid;
+    float: left;
+    margin: 30px 30px;
+}
+
+.clear {
+    clear: both;
+}
