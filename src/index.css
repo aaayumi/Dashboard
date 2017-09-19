@@ -4,6 +4,8 @@ body {
   font-family: sans-serif;
 }
 
+button:focus {outline:0;}
+
 /**** Header ****/
 
 header {
@@ -45,11 +47,28 @@ header h1 {
     color: white;
 }
 
+header .avatar {
+    float: right;
+    margin-top: -100px;
+}
+
 /**** Payment ****/
 #PaymentPanel {
     margin-top: -20px;
     background-color: #5d4a79;
     color: white;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#PaymentPanel.slideOpen {
+    padding-top: 400px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 #PaymentPanel p, h1 {
@@ -65,10 +84,69 @@ padding-bottom: 30px;
 }
 
 /**** Categories ****/
-
-.chart {
-    background-color: red;
+.Categories {
+    background-color: blue;
 }
+
+#chart {
+    height: 150px;
+    background-color: #5d4a79;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#chart.slideOpen {
+    height: 400px;
+    background-color: #5d4a79;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+button {
+     background-color: #5d4a79;
+     border: none;
+     padding-top: 100px;
+     padding-left: 900px;
+      -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.slideOpen button {
+     background-color: #5d4a79;
+     border: none;
+     padding-top: 100px;
+     padding-left: 900px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.arrowup {
+    height: 40px;
+    width: 40px;
+    background-color: #5d4a79;
+    border-color: #5d4a79;
+    color: white;
+}
+
+.arrowdown {
+    height: 40px;
+    width: 40px;
+    background-color: #5d4a79;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    border-color: #5d4a79;
+    color: white;
+}
+
+
 .Pi {
     height: 300px;
     width:  400px;
