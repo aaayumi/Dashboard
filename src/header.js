@@ -1,5 +1,5 @@
 import React from 'react'
-import  { Link } from 'react-router-dom'
+import  { NavLink } from 'react-router-dom'
 import Avatar from 'material-ui/Avatar';
 import FileFolder from 'material-ui/svg-icons/file/folder';
 import FontIcon from 'material-ui/FontIcon';
@@ -35,12 +35,15 @@ const Header = () => (
  
     <nav>
       <ul>
-        <li className="navMenu"><Link to='/'>PAYMENT</Link></li>
-        <li className="navMenu"><Link to='/categories'>ALL CATEGORIES</Link></li>
-        <li className="navMenu"><Link to='/details'>DETAILS</Link></li>
+        <li className="navMenu"><NavLink  exact to='/' activeStyle={{
+      fontWeight: 'bold', color:'#79d888'}} >PAYMENT</NavLink></li>
+        <li className="navMenu"><NavLink to='/categories' activeStyle={{
+      fontWeight: 'bold', color:'#79d888'}} >ALL CATEGORIES</NavLink></li>
+        <li className="navMenu"><NavLink to='/details' activeStyle={{
+      fontWeight: 'bold', color:'#79d888'}} >DETAILS</NavLink></li>
       </ul>
     </nav>
-          
+
   <ul className="menuIcons">
   <li><img src={Question} alt="Question" className="Question"/></li>
   <li><img src={Bell} alt="Bell" className="Bell"/></li>

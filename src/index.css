@@ -141,6 +141,11 @@ padding-bottom: 30px;
 }
 
 .paymentTool {
+    display: none;
+}
+
+.slideOpen .paymentTool {
+    padding-top: 100px;
     list-style: none;
     display: flex;
     flex-direction: row;

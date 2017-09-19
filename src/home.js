@@ -12,7 +12,6 @@ class Home extends React.Component{
             slideOpen : false,
             priceBar: false
         }
-
    this.handleClick = this.handleClick.bind(this);
    this.clickHandle = this.clickHandle.bind(this);
     }
