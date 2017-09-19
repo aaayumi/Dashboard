@@ -74,7 +74,7 @@ header .avatar {
 }
 
 .slideOpen {
-     -webkit-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
@@ -134,6 +134,16 @@ padding-bottom: 30px;
     padding-right: 20px;
     margin-top: -20px;
     border-left: thick solid #fff;
+}
+
+.Check , .Master, .Visa, .Paypal {
+    height: 30px;
+    width: 30px;
+}
+
+.Fail {
+    height: 30px;
+    width: 30px;
 }
 
 /**** Categories ****/

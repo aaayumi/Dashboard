@@ -1,6 +1,7 @@
 import React from 'react';
 import Arrowup from './img/arrowup.png';
 import Arrowdown from './img/arrowdown.png';
+import PaymentTable from './payment.js'
 
 
 class Home extends React.Component{
@@ -33,21 +34,20 @@ class Home extends React.Component{
     <div>
     <div id="PaymentPanel" className={PaymentPanel}>
     <p className="PaymentTitle"　onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days ▼" : "Spent Last 30 Days ▲"}</p>
-    <h2>{!this.state.priceBar? "$9,964.55" : "$19929.1"}</h2>
+    <h2>{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>
 
     <ul className="paymentTool">
     <li>
-    <div className="tool">Visa  <br />  {!this.state.priceBar? "$9504.13" : "$19008.26"}</div></li>
+    <div className="tool">Visa  <br />  {!this.state.priceBar? "$9,504.13" : "$19,008.26"}</div></li>
     <li><div className="tool">MasterCard <br />   {!this.state.priceBar? "$490.64" : "$981.28"}</div></li>
-    <li><div className="tool">PayPal  <br /> {!this.state.priceBar? "$824.52" : "$1649.04"}</div></li>
+    <li><div className="tool">PayPal  <br /> {!this.state.priceBar? "$824.52" : "$1,649.04"}</div></li>
     </ul>
     <div className="paymentSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
     </div>
 
      <div>
+     <PaymentTable />
     <ul>
-    <li> List come here </li>
-    <li> List come here </li>
     </ul>
     </div>
     </div>
