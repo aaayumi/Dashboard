@@ -5,6 +5,7 @@ import FileFolder from 'material-ui/svg-icons/file/folder';
 import FontIcon from 'material-ui/FontIcon';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
+import MenuBar from './img/linemenu.png';
 
 import {
   blue300,
@@ -21,7 +22,9 @@ const style = {margin: 5};
 // between routes.
 const Header = () => (
   <header>
-  <h1> Ticket Purchase Conversational Mix </h1>
+
+ <h1><img src={MenuBar} alt="MenuBar" className="MenuBar"/> Ticket Purchase Conversational Mix </h1>
+ 
     <nav>
       <ul>
         <li className="navMenu"><Link to='/'>PAYMENT</Link></li>

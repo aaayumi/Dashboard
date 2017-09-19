@@ -43,13 +43,23 @@ header ul .navMenu {
 }
 
 header h1 {
-    margin-left: 100px;
     color: white;
+    padding-top: -15px;
 }
 
 header .avatar {
     float: right;
     margin-top: -100px;
+}
+
+.MenuBar {
+    height: 30px;
+    width: 40px;
+    margin-top: 20px;
+}
+
+.title {
+    padding-top: 10px;
 }
 
 /**** Payment ****/
@@ -63,19 +73,45 @@ header .avatar {
     transition: all 0.5s ease;
 }
 
+.slideOpen {
+     -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#PaymentPanel h2 {
+    font-size: 50px;
+    padding-left: 30px;
+}
+
 #PaymentPanel.slideOpen {
-    padding-top: 400px;
+     background-color: #5d4a79;
+     height: 400px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
+.paymentSlide {
+    padding-left:  900px;
+}
+
+.slideOpen .paymentSlide {
+    margin-top: 200px;
+    padding-left:  900px;
+}
+
+.slideOpen .PaymentTitle { 
+margin-left: 300px;
+}
+
 #PaymentPanel p, h1 {
     margin-left: 50px;
 }
 
-#PaymentPanel p{
+#PaymentPanel p {
 padding-top: 30px;
 }
 
@@ -83,14 +119,46 @@ padding-top: 30px;
 padding-bottom: 30px;
 }
 
-/**** Categories ****/
-.Categories {
-    background-color: blue;
+.paymentTool {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    float: right;
 }
 
+.tool {
+    padding-left: 10px;
+}
+
+.paymentTool li {
+    padding-right: 20px;
+    margin-top: -20px;
+    border-left: thick solid #fff;
+}
+
+/**** Categories ****/
+
 #chart {
-    height: 150px;
     background-color: #5d4a79;
+    color: white;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.categoriesSlide {
+    background-color: #5d4a79;
+    height: 200px;
+     -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.slideOpen {
+    background-color: #5d4a79;
+    height: 300px; 
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -98,35 +166,20 @@ padding-bottom: 30px;
 }
 
 #chart.slideOpen {
-    height: 400px;
-    background-color: #5d4a79;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-button {
-     background-color: #5d4a79;
-     border: none;
-     padding-top: 100px;
-     padding-left: 900px;
-      -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.slideOpen button {
-     background-color: #5d4a79;
-     border: none;
-     padding-top: 100px;
-     padding-left: 900px;
+.slideOpen .categoriesSlide{
+    padding-top: 10px; 
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+
 .arrowup {
     height: 40px;
     width: 40px;

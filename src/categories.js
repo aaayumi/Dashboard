@@ -21,9 +21,9 @@ class Categories extends React.Component{
     render(){
     const CategoriesPanel = this.state.slideOpen? "slideOpen" : "";
         return(
-    <div id="Categories" >
+    <div>
     <div id="chart" className={CategoriesPanel}>
-    <button onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</button>
+    <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
    </div>
     <div className="clear">Question List come hre </div>
     </div>
