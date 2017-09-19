@@ -13,16 +13,17 @@ import Master from './img/Master.png';
 import Visa from './img/Visa.png';
 import Paypal from './img/Paypal.png';
 
+
 class PaymentTable extends React.Component {
   render() {
     return(
-      <Table>
+    <Table>
     <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
       <TableRow>
         <TableHeaderColumn></TableHeaderColumn>
         <TableHeaderColumn>Today</TableHeaderColumn>
         <TableHeaderColumn>Payment Method</TableHeaderColumn>
-        <TableHeaderColumn>Narrative</TableHeaderColumn>
+        <TableHeaderColumn className="Narrative">Narrative</TableHeaderColumn>
         <TableHeaderColumn>Amount</TableHeaderColumn>
       </TableRow>
     </TableHeader>
@@ -68,4 +69,3 @@ class PaymentTable extends React.Component {
 }
 }
 export default PaymentTable;
-  

@@ -45,7 +45,7 @@ class Home extends React.Component{
     <div className="paymentSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
     </div>
 
-     <div>
+     <div className="PaymentTable" >
      <PaymentTable />
     <ul>
     </ul>

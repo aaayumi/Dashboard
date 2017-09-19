@@ -73,7 +73,7 @@ header .avatar {
     transition: all 0.5s ease;
 }
 
-.slideOpen {
+#PaymentPanel .slideOpen {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -96,11 +96,19 @@ header .avatar {
 
 .paymentSlide {
     padding-left:  900px;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 .slideOpen .paymentSlide {
     margin-top: 200px;
     padding-left:  900px;
+     -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
 }
 
 .slideOpen .PaymentTitle { 
@@ -146,9 +154,30 @@ padding-bottom: 30px;
     width: 30px;
 }
 
+.Narrative {
+    width: 300px;
+}
+
+ .table {
+    width: 2000px;
+}
+
 /**** Categories ****/
 
 #chart {
+    margin-top: -20px;
+    height: 200px;
+    background-color: #5d4a79;
+    color: white;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#chart.slideOpen{
+    margin-top: -20px;
+    height: 300px;
     background-color: #5d4a79;
     color: white;
     -webkit-transition: all 0.5s ease;
@@ -158,8 +187,9 @@ padding-bottom: 30px;
 }
 
 .categoriesSlide {
+    padding-top: 100px;
+    padding-left: 900px;
     background-color: #5d4a79;
-    height: 200px;
      -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -168,14 +198,6 @@ padding-bottom: 30px;
 
 .slideOpen {
     background-color: #5d4a79;
-    height: 300px; 
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#chart.slideOpen {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -183,7 +205,8 @@ padding-bottom: 30px;
 }
 
 .slideOpen .categoriesSlide{
-    padding-top: 10px; 
+    padding-top: 200px;
+    padding-left: 900px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;

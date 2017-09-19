@@ -23,9 +23,11 @@ class Categories extends React.Component{
         return(
     <div>
     <div id="chart" className={CategoriesPanel}>
+   <p>Data comes here</p>
+
     <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
-   </div>
-    <div className="clear">Question List come hre </div>
+    </div>
+     <div className="clear">Question List come hre </div>
     </div>
         )
     }
