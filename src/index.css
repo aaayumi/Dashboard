@@ -9,7 +9,11 @@ button:focus {outline:0;}
 /**** Header ****/
 
 header {
-    background-color: #51436f;
+    background-color:  #b045cb;
+    background: -webkit-linear-gradient(left,  #b045cb ,  #6e1dba); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,  #b045cb,  #6e1dba); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,  #b045cb,  #6e1dba); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,  #b045cb,  #6e1dba); /* Standard syntax */
     height: 150px;
     margin-top: -21px;
 }
@@ -47,9 +51,19 @@ header h1 {
     padding-top: -15px;
 }
 
-header .avatar {
+/*header .avatar {
     float: right;
     margin-top: -100px;
+} */
+
+.menuIcons {
+    margin-top: -100px;
+    float: right;
+}
+
+.Question , .Bell, .Search {
+    height: 30px;
+    width: 40px; 
 }
 
 .MenuBar {
@@ -65,7 +79,12 @@ header .avatar {
 /**** Payment ****/
 #PaymentPanel {
     margin-top: -20px;
-    background-color: #5d4a79;
+    height: 300px;
+    background-color: #e324e3;
+    background: -webkit-linear-gradient(left, #e324e3 , #691dba); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #e324e3, #691dba); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #e324e3, #691dba); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #e324e3 , #691dba); /* Standard syntax */
     color: white;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -73,7 +92,9 @@ header .avatar {
     transition: all 0.5s ease;
 }
 
-#PaymentPanel .slideOpen {
+#PaymentPanel.slideOpen {
+    margin-top: -20px;
+    height: 400px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -85,30 +106,22 @@ header .avatar {
     padding-left: 30px;
 }
 
-#PaymentPanel.slideOpen {
-     background-color: #5d4a79;
-     height: 400px;
+.paymentSlide {
+    padding-left:  900px;
+    padding-top: 50px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
-.paymentSlide {
-    padding-left:  900px;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    -o-transition: all 0.1s ease;
-    transition: all 0.1s ease;
-}
-
 .slideOpen .paymentSlide {
-    margin-top: 200px;
-    padding-left:  900px;
-     -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    -o-transition: all 0.1s ease;
-    transition: all 0.1s ease;
+    padding-left: 900px;
+     padding-top: 150px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .slideOpen .PaymentTitle { 
@@ -166,8 +179,12 @@ padding-bottom: 30px;
 
 #chart {
     margin-top: -20px;
-    height: 200px;
-    background-color: #5d4a79;
+    height: 300px;
+    background-color: #e324e3;
+    background: -webkit-linear-gradient(left, #e324e3 , #691dba); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #e324e3, #691dba); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #e324e3, #691dba); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #e324e3 , #691dba); /* Standard syntax */
     color: white;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -177,8 +194,12 @@ padding-bottom: 30px;
 
 #chart.slideOpen{
     margin-top: -20px;
-    height: 300px;
-    background-color: #5d4a79;
+    height: 400px;
+    background-color: #e324e3;
+    background: -webkit-linear-gradient(left, #e324e3 , #691dba); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #e324e3, #691dba); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #e324e3, #691dba); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #e324e3 , #691dba); /* Standard syntax */
     color: white;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -187,9 +208,13 @@ padding-bottom: 30px;
 }
 
 .categoriesSlide {
-    padding-top: 100px;
+    padding-top: 200px;
     padding-left: 900px;
-    background-color: #5d4a79;
+    background-color: #e324e3;
+    background: -webkit-linear-gradient(left, #e324e3 , #691dba); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #e324e3, #691dba); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #e324e3, #691dba); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #e324e3 , #691dba); /* Standard syntax */
      -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -205,7 +230,7 @@ padding-bottom: 30px;
 }
 
 .slideOpen .categoriesSlide{
-    padding-top: 200px;
+    padding-top: 290px;
     padding-left: 900px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;

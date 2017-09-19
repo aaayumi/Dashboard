@@ -6,6 +6,9 @@ import FontIcon from 'material-ui/FontIcon';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 import MenuBar from './img/linemenu.png';
+import Question from './img/question.png';
+import Bell from './img/bell.png';
+import Search from './img/search.png';
 
 import {
   blue300,
@@ -16,10 +19,15 @@ import {
   purple500,
 } from 'material-ui/styles/colors';
 
-const style = {margin: 5};
+const styles = {
+  headline: {
+    fontSize: 24,
+    paddingTop: 16,
+    marginBottom: 12,
+    fontWeight: 400,
+  },
+};
 
-// The Header creates links that can be used to navigate
-// between routes.
 const Header = () => (
   <header>
 
@@ -32,14 +40,19 @@ const Header = () => (
         <li className="navMenu"><Link to='/details'>DETAILS</Link></li>
       </ul>
     </nav>
-
-   <List className="avatar">
+          
+  <ul className="menuIcons">
+  <li><img src={Question} alt="Question" className="Question"/></li>
+  <li><img src={Bell} alt="Bell" className="Bell"/></li>
+  <li><img src={Search} alt="Search" className="Search"/></li>
+  <li><List className="avatar">
     <ListItem
       disabled={true}
       leftAvatar={<Avatar>A</Avatar>}
     >
     </ListItem>
-   </List>
+   </List></li>
+  </ul>
   </header>
 )
 

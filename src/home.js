@@ -4,6 +4,7 @@ import Arrowdown from './img/arrowdown.png';
 import PaymentTable from './payment.js'
 
 
+
 class Home extends React.Component{
     constructor(props){
         super(props);

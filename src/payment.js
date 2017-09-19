@@ -17,7 +17,7 @@ import Paypal from './img/Paypal.png';
 class PaymentTable extends React.Component {
   render() {
     return(
-    <Table>
+    <Table style={{ width: 1200 }}>
     <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
       <TableRow>
         <TableHeaderColumn></TableHeaderColumn>
