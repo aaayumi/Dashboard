@@ -257,6 +257,16 @@ font-size: 50px;
      border: 1px solid rgb(238, 238, 238);
 }
 
+.arrowUpDown {
+    margin-top: 10px;
+    height: 15px;
+    width: 15px;
+}
+
+.openTable {
+    text-align: center;
+}
+
 /**** Categories ****/
 
 #chart {

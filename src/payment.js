@@ -13,6 +13,7 @@ import Master from './img/Master.png';
 import Visa from './img/Visa.png';
 import Paypal from './img/Paypal.png';
 import Dotmenu from './img/dotmenu.png';
+import arrowUpDown from './img/arrowUpDown.png';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
@@ -35,10 +36,21 @@ let rows = [
   {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 3 }
 ];
 
+let rows2 = [
+ {date: "12:30 12.9.2017", payment: "MasterCard", narrative: "restige Cosmetics, Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$912.51", uniqueId: 0 },
+  {date: "11:30 12.9.2017", payment: "Visa", narrative: "Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$744.51", uniqueId: 1 },
+  {date: "13:30 12.9.2017", payment: "PayPal", narrative: "Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$12.51", uniqueId: 2 },
+  {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 3 },
+  {date: "12:30 12.9.2017", payment: "MasterCard", narrative: "restige Cosmetics, Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$912.51", uniqueId: 0 },
+  {date: "11:30 12.9.2017", payment: "Visa", narrative: "Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$744.51", uniqueId: 1 },
+  {date: "13:30 12.9.2017", payment: "PayPal", narrative: "Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$12.51", uniqueId: 2 },
+  {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 3 }
+];
+
 // our table hader information, key is the name of the 
 // property to sort by when the header is clicked 
 let headers = [
-   {name: "", key: "checkbox"},
+  {name: "", key: "checkbox"},
   {name: "Today", key: "date"},
   {name: "Payment", key: "payment"},
   {name: "Narrative", key: "narrative"},
@@ -50,7 +62,17 @@ class SortableTable extends React.Component {
   
   constructor(props){
     super(props);
-    this.state = {rows, sortBy: 'firstName'};
+    this.state = {rows, 
+                  sortBy: 'firstName',
+                  tableOpen : false
+                };
+  }
+
+   handleClick = (event) => {
+    event.preventDefault();
+    this.setState({
+      tableOpen : !this.state.tableOpen
+    })
   }
 
   renderHeaders(){
@@ -90,6 +112,7 @@ class SortableTable extends React.Component {
       
   render() {
     return (
+      <div>
         <MuiThemeProvider>
         <Table>
           <TableHeader {...headerProps}>
@@ -97,9 +120,12 @@ class SortableTable extends React.Component {
           </TableHeader>
           <TableBody>
             {this.renderRows()}
+            {!this.state.tableOpen ? this.renderRows() : "" }
           </TableBody>
-        </Table>
+        </Table>   
       </MuiThemeProvider>
+      <p className="openTable" onClick={this.handleClick} >LOAD MORE</p>
+      </div>
     );
   }
 }
@@ -117,7 +143,7 @@ function SortableHeader(props){
   
   return (
     <TableHeaderColumn>
-      <div style={style} onClick={() => props.onClicked()}>{props.name}</div>
+      <div style={style} onClick={() => props.onClicked()}>{props.name}{props.name==""? "" :<img src={arrowUpDown} alt="arrowUpDown" className="arrowUpDown"/>}</div>
     </TableHeaderColumn>
   );
 }
