@@ -9,6 +9,9 @@ import MenuBar from './img/linemenu.png';
 import Question from './img/question.png';
 import Bell from './img/bell.png';
 import Search from './img/search.png';
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
 
 import {
   blue300,
@@ -28,11 +31,53 @@ const styles = {
   },
 };
 
-const Header = () => (
-  <header>
+export default class Header extends React.Component{
 
- <h1><img src={MenuBar} alt="MenuBar" className="MenuBar"/> Ticket Purchase Conversational Mix </h1>
+    constructor(props) {
+    super(props);
+
+    this.state = {
+      open: false,
+    };
+  }
+
+  handleTouchTap = (event) => {
+    // This prevents ghost click.
+    event.preventDefault();
+
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
+    render(){
+        return(
+            <header>
+
+<h1><img src={MenuBar} alt="MenuBar" onClick={this.handleTouchTap} className="MenuBar" /> Ticket Purchase Conversational Mix </h1>
  
+        <Popover
+          open={this.state.open}
+          anchorEl={this.state.anchorEl}
+          anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+          targetOrigin={{horizontal: 'left', vertical: 'top'}}
+          onRequestClose={this.handleRequestClose}
+        >
+        
+         <Menu>
+            <MenuItem primaryText="Item1" />
+            <MenuItem primaryText="Item2" />
+            <MenuItem primaryText="Item3" />
+            <MenuItem primaryText="Item4" />
+          </Menu>
+        </Popover>
     <nav>
       <ul>
         <li className="navMenu"><NavLink  exact to='/' activeStyle={{
@@ -57,6 +102,6 @@ const Header = () => (
    </List></li>
   </ul>
   </header>
-)
-
-export default Header
+        )
+    }
+}

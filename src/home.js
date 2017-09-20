@@ -2,15 +2,17 @@ import React from 'react';
 import Arrowup from './img/arrowup.png';
 import Arrowdown from './img/arrowdown.png';
 import PaymentTable from './payment.js'
-
-
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
 
 class Home extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             slideOpen : false,
-            priceBar: false
+            priceBar: false,
+            open: false
         }
    this.handleClick = this.handleClick.bind(this);
    this.clickHandle = this.clickHandle.bind(this);
@@ -27,18 +29,45 @@ class Home extends React.Component{
     this.setState({ priceBar : !this.state.priceBar })
     console.log(!this.state.priceBar)
     }
+    
+     handleTouchTap = (event) => {
+    // This prevents ghost click.
+    event.preventDefault();
+
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
 
     render(){
     const PaymentPanel = this.state.slideOpen? "slideOpen" : "";
     return(
     <div>
     <div id="PaymentPanel" className={PaymentPanel}>
-    <p className="PaymentTitle"　onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days ▼" : "Spent Last 30 Days ▲"}</p>
-    <h2>{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>
-
+    <p className="PaymentTitle"　onClick={this.handleTouchTap}>Spent Last 14 Days</p>
+     <Popover
+          open={this.state.open}
+          anchorEl={this.state.anchorEl}
+          anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+          targetOrigin={{horizontal: 'left', vertical: 'top'}}
+          onRequestClose={this.handleRequestClose}
+        >
+          <Menu>
+           <p className="PaymentTitle"　onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days ▼" : "Spent Last 30 Days ▲"}</p>
+            <MenuItem primaryText=" Last 30 Days" />
+          </Menu>
+        </Popover>
+      <h2>{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>
     <ul className="paymentTool">
     <li>
-    <div className="tool">Visa  <br />  {!this.state.priceBar? "$9,504.13" : "$19,008.26"}</div></li>
+    <div onClick={this.handleTouchTap} className="tool">Visa  <br />  {!this.state.priceBar? "$9,504.13" : "$19,008.26"}</div></li>
     <li><div className="tool">MasterCard <br />   {!this.state.priceBar? "$490.64" : "$981.28"}</div></li>
     <li><div className="tool">PayPal  <br /> {!this.state.priceBar? "$824.52" : "$1,649.04"}</div></li>
     </ul>
@@ -50,6 +79,7 @@ class Home extends React.Component{
     <ul>
     </ul>
     </div>
+    
     </div>
         )
     }
