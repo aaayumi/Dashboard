@@ -80,16 +80,16 @@ export default class Header extends React.Component{
         </Popover>
     <nav>
       <ul>
-        <li className="navMenu"><NavLink  exact to='/' activeStyle={{
+        <li className="navMenu firstHeaderItem"><NavLink  exact to='/' activeStyle={{
       fontWeight: 'bold', color:'#79d888'}} >PAYMENT</NavLink></li>
-        <li className="navMenu"><NavLink to='/categories' activeStyle={{
+        <li className="navMenu secondHeaderItem"><NavLink to='/categories' activeStyle={{
       fontWeight: 'bold', color:'#79d888'}} >ALL CATEGORIES</NavLink></li>
-        <li className="navMenu"><NavLink to='/details' activeStyle={{
+        <li className="navMenu thirdHeaderItem"><NavLink to='/details' activeStyle={{
       fontWeight: 'bold', color:'#79d888'}} >DETAILS</NavLink></li>
       </ul>
     </nav>
 
-  <ul className="menuIcons">
+  <ul className="menuIcons clear">
   <li><img src={Question} alt="Question" className="Question"/></li>
   <li><img src={Bell} alt="Bell" className="Bell"/></li>
   <li><img src={Search} alt="Search" className="Search"/></li>

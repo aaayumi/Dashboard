@@ -7,6 +7,7 @@ import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 
 class Home extends React.Component{
+
     constructor(props){
         super(props);
         this.state = {
@@ -51,17 +52,18 @@ class Home extends React.Component{
     return(
     <div>
     <div id="PaymentPanel" className={PaymentPanel}>
-    <p className="PaymentTitle"　onClick={this.handleTouchTap}>Spent Last 14 Days</p>
-     <Popover
+    <div className="PaymentTitle">Spent Last 14 Days  <button className="PaymentToggle" onClick={this.handleTouchTap}>▼</button></div>
+  
+      <Popover
           open={this.state.open}
           anchorEl={this.state.anchorEl}
-          anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-          targetOrigin={{horizontal: 'left', vertical: 'top'}}
+          anchorOrigin={{horizontal:"right",vertical:"top"}}
+          targetOrigin={{horizontal:"left", vertical :"top"}}
           onRequestClose={this.handleRequestClose}
         >
           <Menu>
-           <p className="PaymentTitle"　onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days ▼" : "Spent Last 30 Days ▲"}</p>
-            <MenuItem primaryText=" Last 30 Days" />
+           <p className="menuItem" onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
+            <p className="menuItem"  onClick={this.clickHandle}>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
           </Menu>
         </Popover>
       <h2>{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>

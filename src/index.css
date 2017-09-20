@@ -14,11 +14,11 @@ header {
     background: -o-linear-gradient(right,  #b045cb,  #6e1dba); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(right,  #b045cb,  #6e1dba); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right,  #b045cb,  #6e1dba); /* Standard syntax */
-    height: 150px;
     margin-top: -21px;
 }
 header ul {
-    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 20px;
     list-style: none;
     text-decoration: none;
     display: flex;
@@ -26,29 +26,53 @@ header ul {
     }
 
 header li a {
+    text-decoration: none;
+    color: white;
+}
+header .firstHeaderItem:hover{
+    font-size: 20px;
      text-decoration: none;
      display: inline;
-     margin-left: 50px;
+     padding-left: 130px;
+     color: white;
+}
+
+header .firstHeaderItem{
+    font-size: 20px;
+     text-decoration: none;
+     display: inline;
+     padding-left: 130px;
+     color: white;
+}
+
+header .secondHeaderItem, .thirdHeaderItem{
+    font-size: 20px;
+     text-decoration: none;
+     display: inline;
+     padding-left: 170px;
      color: white;
 }
 
 header li a:hover{
      text-decoration: none;
      display: inline;
-     margin-left: 50px;
      color: #79d888;
 }
 
 header ul .navMenu {
     text-decoration: none;
      display: inline;
-     margin-left: 50px;
      color: white;
 }
 
 header h1 {
     color: white;
-    padding-top: -15px;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+header img {
+    padding-right: 10px;
 }
 
 /*header .avatar {
@@ -57,7 +81,6 @@ header h1 {
 } */
 
 .menuIcons {
-    margin-top: -100px;
     float: right;
 }
 
@@ -72,8 +95,8 @@ header h1 {
     margin-top: 20px;
 }
 
-.title {
-    padding-top: 10px;
+header ul {
+      clear: both;
 }
 
 /**** Payment ****/
@@ -128,8 +151,23 @@ header h1 {
 margin-left: 300px;
 }
 
+.menuItem:hover{
+    color: #79d888;
+}
+
 #PaymentPanel p, h1 {
     margin-left: 50px;
+}
+
+.PaymentTitle {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.PaymentTitle button {
+    border: none;
+    background-color: #e324e3;
+    color: white;
 }
 
 #PaymentPanel p {
