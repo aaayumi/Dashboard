@@ -52,7 +52,7 @@ class Home extends React.Component{
     return(
     <div>
     <div id="PaymentPanel" className={PaymentPanel}>
-    <div className="PaymentTitle">Spent Last 14 Days  <button className="PaymentToggle" onClick={this.handleTouchTap}>▼</button></div>
+    <div className="PaymentTitle">Spent Last 14 Days            <button className="PaymentToggle" onClick={this.handleTouchTap}>▼</button></div>
   
       <Popover
           open={this.state.open}
@@ -66,7 +66,7 @@ class Home extends React.Component{
             <p className="menuItem"  onClick={this.clickHandle}>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
           </Menu>
         </Popover>
-      <h2>{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>
+      <h2 className="paymentSum">{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>
     <ul className="paymentTool">
     <li>
     <div onClick={this.handleTouchTap} className="tool">Visa  <br />  {!this.state.priceBar? "$9,504.13" : "$19,008.26"}</div></li>

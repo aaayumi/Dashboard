@@ -90,9 +90,9 @@ export default class Header extends React.Component{
     </nav>
 
   <ul className="menuIcons clear">
-  <li><img src={Question} alt="Question" className="Question"/></li>
-  <li><img src={Bell} alt="Bell" className="Bell"/></li>
   <li><img src={Search} alt="Search" className="Search"/></li>
+  <li><img src={Bell} alt="Bell" className="Bell"/></li>
+  <li><img src={Question} alt="Question" className="Question"/></li>
   <li><List className="avatar">
     <ListItem
       disabled={true}

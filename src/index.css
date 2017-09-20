@@ -30,7 +30,7 @@ header li a {
     color: white;
 }
 header .firstHeaderItem:hover{
-    font-size: 20px;
+    font-size: 12px;
      text-decoration: none;
      display: inline;
      padding-left: 130px;
@@ -38,7 +38,7 @@ header .firstHeaderItem:hover{
 }
 
 header .firstHeaderItem{
-    font-size: 20px;
+    font-size: 12px;
      text-decoration: none;
      display: inline;
      padding-left: 130px;
@@ -46,7 +46,7 @@ header .firstHeaderItem{
 }
 
 header .secondHeaderItem, .thirdHeaderItem{
-    font-size: 20px;
+    font-size: 12px;
      text-decoration: none;
      display: inline;
      padding-left: 170px;
@@ -69,10 +69,15 @@ header h1 {
     color: white;
     font-size: 30px;
     margin-left: 20px;
+    padding-top: 5px;
 }
 
 header img {
     padding-right: 10px;
+}
+
+header .avatar {
+    margin-top: -20px;
 }
 
 /*header .avatar {
@@ -82,6 +87,7 @@ header img {
 
 .menuIcons {
     float: right;
+    margin-top: -155px;
 }
 
 .Question , .Bell, .Search {
@@ -102,7 +108,7 @@ header ul {
 /**** Payment ****/
 #PaymentPanel {
     margin-top: -20px;
-    height: 300px;
+    height: 190px;
     background-color: #e324e3;
     background: -webkit-linear-gradient(left, #e324e3 , #691dba); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right, #e324e3, #691dba); /* For Opera 11.1 to 12.0 */
@@ -125,13 +131,13 @@ header ul {
 }
 
 #PaymentPanel h2 {
-    font-size: 50px;
-    padding-left: 30px;
+    font-size: 65px;
+    margin-left: 75px;
 }
 
 .paymentSlide {
     padding-left:  900px;
-    padding-top: 50px;
+    margin-top: -35px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -147,10 +153,6 @@ header ul {
     transition: all 0.5s ease;
 }
 
-.slideOpen .PaymentTitle { 
-margin-left: 300px;
-}
-
 .menuItem:hover{
     color: #79d888;
 }
@@ -160,8 +162,9 @@ margin-left: 300px;
 }
 
 .PaymentTitle {
-    padding-top: 30px;
-    padding-left: 30px;
+    padding-top: 35px;
+    padding-left: 75px;
+    font-size: 20px;
 }
 
 .PaymentTitle button {
@@ -170,14 +173,10 @@ margin-left: 300px;
     color: white;
 }
 
-#PaymentPanel p {
-padding-top: 30px;
+.paymentSum {
+margin-top: 20px;
+font-size: 50px;
 }
-
-#PaymentPanel h1 {
-padding-bottom: 30px;
-}
-
 .paymentTool {
     display: none;
 }
@@ -216,6 +215,10 @@ padding-bottom: 30px;
 
  .table {
     width: 2000px;
+}
+
+.paymentToggle {
+    margin-left: 20px;
 }
 
 /**** Categories ****/
@@ -282,16 +285,16 @@ padding-bottom: 30px;
 }
 
 .arrowup {
-    height: 40px;
-    width: 40px;
+    height: 15px;
+    width: 15px;
     background-color: #5d4a79;
     border-color: #5d4a79;
     color: white;
 }
 
 .arrowdown {
-    height: 40px;
-    width: 40px;
+    height: 15px;
+    width: 15px;
     background-color: #5d4a79;
     border: none;
     margin: 0px;
