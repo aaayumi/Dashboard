@@ -27,7 +27,10 @@ class Home extends React.Component{
     }
 
     clickHandle() {
-    this.setState({ priceBar : !this.state.priceBar })
+    this.setState({ 
+              priceBar : !this.state.priceBar,
+              open: false
+     })
     console.log(!this.state.priceBar)
     }
     
@@ -52,13 +55,13 @@ class Home extends React.Component{
     return(
     <div>
     <div id="PaymentPanel" className={PaymentPanel}>
-    <div className="PaymentTitle">Spent Last 14 Days            <button className="PaymentToggle" onClick={this.handleTouchTap}>▼</button></div>
+    <div className="PaymentTitle">{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 30 Days"}<button className="PaymentToggle" onClick={this.handleTouchTap}>▼</button></div>
   
       <Popover
           open={this.state.open}
           anchorEl={this.state.anchorEl}
-          anchorOrigin={{horizontal:"right",vertical:"top"}}
-          targetOrigin={{horizontal:"left", vertical :"top"}}
+          anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+          targetOrigin={{horizontal: 'right', vertical: 'top'}}
           onRequestClose={this.handleRequestClose}
         >
           <Menu>
@@ -69,7 +72,7 @@ class Home extends React.Component{
       <h2 className="paymentSum">{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>
     <ul className="paymentTool">
     <li>
-    <div onClick={this.handleTouchTap} className="tool">Visa  <br />  {!this.state.priceBar? "$9,504.13" : "$19,008.26"}</div></li>
+    <div onClick={this.handleTouchTap} className="tool">VISA <br />  {!this.state.priceBar? "$9,504.13" : "$19,008.26"}</div></li>
     <li><div className="tool">MasterCard <br />   {!this.state.priceBar? "$490.64" : "$981.28"}</div></li>
     <li><div className="tool">PayPal  <br /> {!this.state.priceBar? "$824.52" : "$1,649.04"}</div></li>
     </ul>
