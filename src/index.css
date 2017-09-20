@@ -267,6 +267,35 @@ font-size: 50px;
     text-align: center;
 }
 
+.tableRow {
+    width: 1270px;
+}
+
+.tableOne {
+    width: 10px;
+    padding-left: 300px;
+}
+
+.tableTwo {
+    width: 150px;
+}
+
+.tableThree {
+    width: 180px;
+}
+
+.tableFour {
+    width: 660px;
+}
+
+.tableFive {
+    width: 60px;
+}
+
+.tableSix {
+    width: 20px;
+}
+
 /**** Categories ****/
 
 #chart {
