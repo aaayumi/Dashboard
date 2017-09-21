@@ -61,7 +61,7 @@ export default class Header extends React.Component{
         return(
             <header>
 
-<h1><img src={MenuBar} alt="MenuBar" onClick={this.handleTouchTap} className="MenuBar" /> Ticket Purchase Conversational Mix </h1>
+       <h1><div className="menubarSample"><img src={MenuBar} alt="MenuBar" onClick={this.handleTouchTap} className="MenuBar" /> </div>Ticket Purchase Conversational Mix </h1>
  
         <Popover
           open={this.state.open}
@@ -81,18 +81,18 @@ export default class Header extends React.Component{
     <nav>
       <ul>
         <li className="navMenu firstHeaderItem"><NavLink  exact to='/' activeStyle={{
-      fontWeight: 'bold', color:'#79d888'}} >PAYMENT</NavLink></li>
+      fontWeight: 'bold', fontSize: '14px'}} >PAYMENT</NavLink></li>
         <li className="navMenu secondHeaderItem"><NavLink to='/categories' activeStyle={{
-      fontWeight: 'bold', color:'#79d888'}} >ALL CATEGORIES</NavLink></li>
+      fontWeight: 'bold', fontSize: '14px'}} >ALL CATEGORIES</NavLink></li>
         <li className="navMenu thirdHeaderItem"><NavLink to='/details' activeStyle={{
-      fontWeight: 'bold', color:'#79d888'}} >DETAILS</NavLink></li>
+      fontWeight: 'bold', fontSize: '14px'}} >DETAILS</NavLink></li>
       </ul>
     </nav>
 
   <ul className="menuIcons clear">
-  <li><img src={Search} alt="Search" className="Search"/></li>
-  <li><img src={Bell} alt="Bell" className="Bell"/></li>
-  <li><img src={Question} alt="Question" className="Question"/></li>
+  <li><div className="questionSample"><img src={Search} alt="Search" className="Search"/></div></li>
+  <li><div className="bellSample"><img src={Bell} alt="Bell" className="Bell"/></div></li>
+  <li><div className="searchSample"><img src={Question} alt="Question" className="Question"/></div></li>
   <li><List className="avatar">
     <ListItem
       disabled={true}

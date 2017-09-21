@@ -20,6 +20,8 @@ import MenuItem from 'material-ui/MenuItem';
 
 import { MuiThemeProvider} from 'material-ui';
 
+import Arrowup from './img/arrowup.png';
+import Arrowdown from './img/arrowdown.png';
 
 // properties of TableHeader component
 let headerProps = {
@@ -37,14 +39,14 @@ let rows = [
 ];
 
 let rows2 = [
- {date: "12:30 12.9.2017", payment: "MasterCard", narrative: "restige Cosmetics, Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$912.51", uniqueId: 0 },
-  {date: "11:30 12.9.2017", payment: "Visa", narrative: "Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$744.51", uniqueId: 1 },
-  {date: "13:30 12.9.2017", payment: "PayPal", narrative: "Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$12.51", uniqueId: 2 },
-  {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 3 },
-  {date: "12:30 12.9.2017", payment: "MasterCard", narrative: "restige Cosmetics, Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$912.51", uniqueId: 0 },
-  {date: "11:30 12.9.2017", payment: "Visa", narrative: "Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$744.51", uniqueId: 1 },
-  {date: "13:30 12.9.2017", payment: "PayPal", narrative: "Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$12.51", uniqueId: 2 },
-  {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 3 }
+ {date: "12:30 12.9.2017", payment: "MasterCard", narrative: "restige Cosmetics, Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$912.51", uniqueId: 4 },
+  {date: "11:30 12.9.2017", payment: "Visa", narrative: "Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$744.51", uniqueId: 4 },
+  {date: "13:30 12.9.2017", payment: "PayPal", narrative: "Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$12.51", uniqueId: 5},
+  {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 6 },
+  {date: "12:30 12.9.2017", payment: "MasterCard", narrative: "restige Cosmetics, Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$912.51", uniqueId: 7 },
+  {date: "11:30 12.9.2017", payment: "Visa", narrative: "Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$744.51", uniqueId: 8 },
+  {date: "13:30 12.9.2017", payment: "PayPal", narrative: "Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$12.51", uniqueId: 9 },
+  {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 10 }
 ];
 
 // our table hader information, key is the name of the 
@@ -72,9 +74,14 @@ class SortableTable extends React.Component {
   
   handleClick = (event) => {
     event.preventDefault();
+
+    const newRows = [...rows2, ...rows];
+
     this.setState({
-      tableOpen : !this.state.tableOpen
+      tableOpen : !this.state.tableOpen,
+      rows: newRows
     })
+    console.log(!this.state.tableOpen)
   }
   
 
@@ -115,7 +122,7 @@ class SortableTable extends React.Component {
       
   render() {
     return (
-      <div>
+      <div className="paymentTable">
         <MuiThemeProvider>
         <Table>
           <TableHeader {...headerProps}>
@@ -123,11 +130,11 @@ class SortableTable extends React.Component {
           </TableHeader>
           <TableBody>
             {this.renderRows()}
-            {!this.state.tableOpen ? this.renderRows() : "" }
+             
           </TableBody>
         </Table>   
       </MuiThemeProvider>
-      <p className="openTable" onClick={this.handleClick} >LOAD MORE</p>
+      <p className="openTable" onClick={this.handleClick} >{!this.state.tableOpen ? "LOAD MORE" : "ALL DATA IS LOADED"}</p>
       </div>
     );
   }
@@ -135,22 +142,41 @@ class SortableTable extends React.Component {
 
   
   
-function SortableHeader(props){
+class SortableHeader extends React.Component {
+
+   constructor(props){
+    super(props);
+    this.state = {
+                 toggle : false
+                };
+  this.handleClick = this.handleClick.bind(this);
+  }
+   handleClick = (event) => {
+    // This prevents ghost click.
+    event.preventDefault();
+
+    this.setState({
+      toggle : !this.state.toggle
+    });
+    console.log(!this.state.toggle)
+  };
+
+  
+  render(){
   let style = {
     cursor: "pointer"
   }
-  if(props.isSortColumn){
+  if(this.props.isSortColumn){
     style.fontWeight = "bold";
     style.color = "black";
   }
-  
   return (
     <TableHeaderColumn>
-      <div style={style} onClick={() => props.onClicked()}>{props.name}{props.name==""? "" :<img src={arrowUpDown} alt="arrowUpDown" className="arrowUpDown"/>}</div>
+      <div style={style} onClick={() => this.props.onClicked()}>{this.props.name}   <div className="paymentToggle" onClick={this.handleClick}>{this.props.name == "" ? "" : (this.state.toggle ? "▼": "▲" )} </div></div>
     </TableHeaderColumn>
   );
 }
-  
+}
 
 class UserRow extends React.Component {
 
@@ -182,13 +208,13 @@ class UserRow extends React.Component {
   return (
    
     <TableRow className="tableRow">
-      <TableRowColumn className="tableOne">{this.props.payment=="PayPal"?  <img src={Fail} alt="Check" className="Fail"/> : <img src={Check} alt="Check" className="Check"/> }</TableRowColumn>
+      <TableRowColumn className="tableOne">{this.props.payment=="PayPal"? <div className="failSample"> <img src={Fail} alt="Fail" className="Fail"/></div> : <div className="checkSample"><img src={Check} alt="Check" className="Check"/></div> }</TableRowColumn>
       <TableRowColumn className="tableTwo">{this.props.date}</TableRowColumn>
-      <TableRowColumn className="tableThree">{this.props.payment=="Visa" ?  <img src={Visa} alt="Visa" className="Visa"/> :  (this.props.payment=="PayPal" ?  <img src={Paypal} alt="Paypal" className="Master"/> :  <img src={Master} alt="Master" className="Master"/>)}          
-         &nbsp;  &nbsp;  &nbsp;  {this.props.payment}</TableRowColumn>
+      <TableRowColumn className="tableThree">{this.props.payment=="Visa" ?  <div className="visaSample"> <img src={Visa} alt="Visa" className="Visa"/> </div>:  (this.props.payment=="PayPal" ?   <div className="paypalSample"><img src={Paypal} alt="Paypal" className="Master"/></div> :  <div className="masterSample"> <img src={Master} alt="Master" className="Master"/></div>)}          
+         &nbsp; &nbsp;  &nbsp;  {this.props.payment}</TableRowColumn>
       <TableRowColumn className="tableFour">{this.props.narrative}</TableRowColumn>
       <TableRowColumn className="tableFive">{this.props.amount}</TableRowColumn>
-      <TableRowColumn className="tableSix"><img src={Dotmenu} alt="Dotmenu" className="Dotmenu" onClick={this.handleTouchTap} /> </TableRowColumn>
+      <TableRowColumn className="tableSix"><div className="dotmenuSample"><img src={Dotmenu} alt="Dotmenu" className="Dotmenu" onClick={this.handleTouchTap} /> </div></TableRowColumn>
 
          <Popover
           zDepth={5}

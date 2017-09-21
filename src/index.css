@@ -16,6 +16,7 @@ header {
     background: linear-gradient(to right,  #b045cb,  #6e1dba); /* Standard syntax */
     margin-top: -21px;
 }
+
 header ul {
     padding-top: 25px;
     padding-bottom: 20px;
@@ -23,12 +24,13 @@ header ul {
     text-decoration: none;
     display: flex;
     flex-direction: row;
-    }
+}
 
 header li a {
     text-decoration: none;
     color: white;
 }
+
 header .firstHeaderItem:hover{
     font-size: 12px;
      text-decoration: none;
@@ -56,7 +58,6 @@ header .secondHeaderItem, .thirdHeaderItem{
 header li a:hover{
      text-decoration: none;
      display: inline;
-     color: #79d888;
 }
 
 header ul .navMenu {
@@ -91,14 +92,34 @@ header .avatar {
 }
 
 .Question , .Bell, .Search {
+    height: auto;
+    width: 100%; 
+}
+
+.questionSample , .bellSample {
     height: 30px;
-    width: 40px; 
+    width: 30px;
+    margin-top: -5px;
+    margin-right: 10px;
+}
+
+.searchSample{
+    margin-top: -3px;
+    height: 30px;
+    width: 30px;
 }
 
 .MenuBar {
+    width: 100%;
+    height: auto;
+}
+
+.menubarSample { 
+    padding-top: 20px;
     height: 30px;
-    width: 40px;
-    margin-top: 20px;
+    width: 30px;
+    display: inline-block;
+    padding-right: 20px;
 }
 
 header ul {
@@ -202,16 +223,59 @@ font-size: 50px;
     border-left: thick solid #fff;
 }
 
-.Check , .Master, .Visa, .Paypal {
+.Check  {
+    height: auto;
+    width: 100%;
+}
+
+.checkSample {
     height: 30px;
     width: 30px;
+}
+
+.Master, .Visa, .Paypal {
+    height: auto;
+    width: 100%; 
+    float: left;
+}
+
+.visaSample {
+    padding-top: 20px;
+    height: 30px;
+    width: 30px;
+}
+
+.masterSample {
+    padding-top: 20px;
+    height: 30px;
+    width: 30px;
+}
+
+.paypalSample {
+    padding-top: 20px;
+    height: 30px;
+    width: 20px;
 }
 
 .Fail {
+    height: auto;
+    width: 100%; 
+}
+
+.failSample {
     height: 30px;
     width: 30px;
 }
 
+.Dotmenu {
+     height: auto;
+    width: 100%; 
+}
+
+.dotmenuSample {
+    height: 20px;
+    width: 20px;
+}
 .Narrative {
     width: 300px;
 }
@@ -265,6 +329,9 @@ font-size: 50px;
 
 .openTable {
     text-align: center;
+    font-size: 12px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .tableRow {
@@ -273,7 +340,6 @@ font-size: 50px;
 
 .tableOne {
     width: 10px;
-    padding-left: 300px;
 }
 
 .tableTwo {
@@ -294,6 +360,35 @@ font-size: 50px;
 
 .tableSix {
     width: 20px;
+}
+
+.paymentTable  table thead th:first-child {
+    width: 30px !important;;
+}
+
+.paymentTable  table thead th:nth-child(2) {
+    
+    width: 150px !important;;
+}
+
+.paymentTable  table thead th:nth-child(3) {
+   
+    width: 180px !important;;
+}
+.paymentTable  table thead th:nth-child(4) {
+    
+    width: 660px !important;;
+}
+.paymentTable  table thead th:nth-child(5) {
+   
+    width: 60px !important;;
+}
+.paymentTable  table thead th:nth-child(6) {
+    width: 20px !important;;
+}
+
+.paymentToggle {
+    display: inline-block;
 }
 
 /**** Categories ****/
