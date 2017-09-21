@@ -493,3 +493,85 @@ font-size: 50px;
 .clear {
     clear: both;
 }
+
+/*** Questions ***/
+.list {
+    margin-top: 200px;
+}
+.item-list {
+    width: 1000px;
+}
+
+.questionItem {
+    color: black;
+    border: 1px solid black;
+    margin: 5px 5px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.questionItem form {
+    color: black;
+    border: 1px dot black;
+   
+}
+
+.questionItem form input {
+     width: 500px;
+     padding-right: 40px;
+}
+
+.list .createNew {
+    color: black;
+    border: 1px solid black;
+    margin: 5px 5px;
+    padding: 20px 20px;
+    width: 950px;
+    display: flex;
+    flex-direction: row;
+}
+
+.createnewButton {
+    margin-left: 500px;
+}
+
+.edit , .trashbin {
+    height: auto;
+    width: 100%; 
+}
+
+.editSample  , .trashbinSample {
+   display: inline-block;
+   margin-left: 10px;
+}
+
+.saveSample, .cancelSample {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.add {
+    height: auto;
+    width: 100%;
+}
+
+.addSample {
+    margin-top: -10px;
+    margin-left: 600px;
+    height: 60px;
+    width: 60px;
+}
+
+/***** Footer *****/
+footer {
+    margin-top: 1100px;
+    height: 70px;
+    background-color: #5d4a79;
+    color: white;
+}
+
+footer p {
+    text-align: center;
+    padding-top: 30px;
+}
