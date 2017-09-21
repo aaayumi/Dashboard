@@ -172,7 +172,7 @@ class SortableHeader extends React.Component {
   }
   return (
     <TableHeaderColumn>
-      <div style={style} onClick={() => this.props.onClicked()}>{this.props.name}   <div className="paymentToggle" onClick={this.handleClick}>{this.props.name == "" ? "" : (this.state.toggle ? "▼": "▲" )} </div></div>
+      <div style={style} onClick={() => this.props.onClicked()}>{this.props.name}   <div className="paymentToggle" onClick={this.handleClick}>{this.props.name == "" ? "  " : (this.state.toggle ? "▼": "▲" )} </div></div>
     </TableHeaderColumn>
   );
 }
