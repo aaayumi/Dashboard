@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import List from './questions.js'
 import Arrowup from './img/arrowup.png';
 import Arrowdown from './img/arrowdown.png';
 
@@ -27,7 +28,9 @@ class Categories extends React.Component{
 
     <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
     </div>
-     <div className="clear"> </div>
+     <div className="clear"> 
+     <List />
+     </div>
     </div>
         )
     }
