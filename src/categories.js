@@ -318,8 +318,7 @@ class List extends React.Component {
         </div>
          </div>
          <Chart length={ questionItem.length } />
-         <ListSecond />
-         <ListThird />
+         
          </div>);
     }
     }
@@ -991,11 +990,11 @@ class ListThird extends React.Component {
         super(props);
         this.state = {
             slideOpen : false,
-            piData : [{label: "question1", value: 40}, {label: "question2", value: 50 }, {label: "question3", value: 30 }]
+            piData : [{label: "Advice + FAQ", value: 34}, {label:  "Product Recs", value: 41 }, {label: "Updates", value: 25 }]
         }
  
     this.handleClick = this.handleClick.bind(this);
-
+    this.update = this.update.bind(this);
     }
 
     handleClick(){
@@ -1003,23 +1002,24 @@ class ListThird extends React.Component {
             slideOpen : !this.state.slideOpen
         })
         console.log(!this.state.slideOpen)
-
-
-         var newpiData = parseFloat( piData / 100 * 1000);
-         var newpiData2 = parseFloat( piData2 / 100  * 1000);
-         var newpiData3 = parseFloat( piData3 /100 * 1000);
+    }
+    
+    update() {
+        var totalData = piData + piData2 + piData3
+         var newpiData = piData /  totalData * 100 
+         var newpiData2 = piData2 / totalData * 100 
+         var newpiData3 =  piData3 / totalData * 100 
 
         var array = [
-        {label : "question1" ,value : newpiData },
-        {label: "question2", value:  newpiData2 }, 
-        {label: "question3", value: newpiData3} ]
+        {label : "Advice + FAQ" ,value : newpiData },
+        {label: "Product Recs", value:  newpiData2 }, 
+        {label: "Updates", value: newpiData3} ]
 
         this.setState({
             piData : array
         })
         console.log('finanl ' + this.state.piData)
     }
-
  
     render(){
     var PieChart = rd3.PieChart
@@ -1042,8 +1042,11 @@ class ListThird extends React.Component {
       innerRadius={20}
       sectorBorderColor="white"
       />
+     <button onClick={this.update} className="chartButton" >Update Information</button>
      <div className="clear">
-     <List onChange={this.handleClick} />
+     <List  />
+     <ListSecond />
+     <ListThird />
      </div>
      </div>
         )
@@ -1058,11 +1061,11 @@ class DataChart extends React.Component {
     }
     }
 
-   render(){
+   render() {
     var PieChart = rd3.PieChart
-    var newpiData = parseFloat( piData / 100 * 1000);
-    var newpiData2 = parseFloat( piData2 / 100  * 1000);
-    var newpiData3 = parseFloat( piData3 /100 * 1000);
+    var newpiData = piData / 100 ;
+    var newpiData2 = piData2 / 100;
+    var newpiData3 = piData3 /100 ;
 
     var array = [
         {label : "question1" ,value : newpiData },
