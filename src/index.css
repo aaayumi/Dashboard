@@ -541,11 +541,24 @@ font-size: 50px;
     width: 100%; 
 }
 
-.editSample  , .trashbinSample {
+.dotmenuquestionSample {
+    height: 30px;
+}
+
+.editSample  , .trashbinSample ,.dotmenuquestionSample {
    display: inline-block;
    margin-left: 10px;
 }
+/* .editSample {
 
+     padding-left: 300px;
+}
+
+.trashbinSample {
+     padding-left: 350px;
+
+}
+*/
 .saveSample, .cancelSample {
     display: inline-block;
     margin-left: 10px;
