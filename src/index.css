@@ -510,7 +510,7 @@ font-size: 50px;
 
 .chartButton {
     float: right;
-    margin-right: 600px;
+    margin-right: 1400px;
     margin-top: -30px;
 }
 
@@ -518,7 +518,7 @@ font-size: 50px;
     padding-top: 200px;
     padding-left: 100px;
     height: 470px !important;
-    width: 100% !important;
+    width: 1000px !important;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -527,8 +527,8 @@ font-size: 50px;
 
 .slideOpen .chartjs-render-monitor .chartButton {
     float: right;
-    margin-right: 600px;
-    margin-top: -30px;
+    margin-right: 1300px;
+    margin-top: -60px;
 }
 
 /*** Questions ***/

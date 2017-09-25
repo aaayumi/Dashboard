@@ -1558,19 +1558,19 @@ class ListFifth extends React.Component {
       var totalData = piData + piData2 + piData3 + piData4 + piData5;
 
       let newpiData =  function() {
-       return parseFloat((piData /  totalData ) * 100 ) };
+       return parseInt((piData /  totalData ) * 100 ) };
 
        let newpiData2 =  function() {
-       return parseFloat((piData2 /  totalData ) * 100) };
+       return parseInt((piData2 /  totalData ) * 100) };
 
        let newpiData3 =  function() {
-       return  (piData3 /  totalData ) * 100  };
+       return  parseInt((piData3 /  totalData ) * 100) };
 
        let newpiData4 =  function() {
-       return  (piData4 /  totalData ) * 100};
+       return  parseInt((piData4 /  totalData ) * 100) };
 
        let newpiData5 =  function() {
-       return  (piData5 /  totalData ) * 100 };
+       return  parseInt((piData5 /  totalData ) * 100) };
 
        console.log('update data ' + newpiData())
 
@@ -1578,14 +1578,14 @@ class ListFifth extends React.Component {
 
 
       const data = {
-    labels: [
+      labels: [
         'question1',
         'question2',
         'question3',
         'question4',
         'question5'
-    ],
-    datasets: [{
+       ],
+      datasets: [{
         data: [ newpiData() , newpiData2(), newpiData3(), newpiData4(), newpiData5()],
         backgroundColor: [
         'orange',
@@ -1601,13 +1601,13 @@ class ListFifth extends React.Component {
         'purple',
         'green'
         ]
-    }]};
+      }]};
    return(
     <div>
     <div id="chart" className={CategoriesPanel}>
-    <Pie data={data}/>
+    <Pie style={{"fontSize" : "20px" }}data={data}/>
     <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
-    <button onClick={this.update} className="chartButton" >Update Information</button></div>
+    <button onClick={this.update} className="chartButton">Update Information</button></div>
      
      <div className="clear">
   
