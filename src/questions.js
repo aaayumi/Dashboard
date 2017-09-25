@@ -12,8 +12,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import rd3 from 'rd3';
 import data from './questionSecond.js';
+import {Pie} from 'react-chartjs-2';
 
 const questionItem = [ { item : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor?', id : 1
 }, { item : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor?', id : 2
@@ -310,7 +310,7 @@ export default class List extends React.Component {
       console.log('piData' + piData)
         return (
         <div>
-        <DataChart /> 
+        <PieChart />
         <div className="list" style={{"display" : "flex"}}>
         <div className="titleElement" style={{"flex": "1", "backgroundColor" : "orange"}}>Advice + FAQ </div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
@@ -324,27 +324,6 @@ export default class List extends React.Component {
          </div>);
     }
     }
-
-  class DataChart extends React.Component {
-    render(){
-    var PieChart = rd3.PieChart
-    console.log("datachart" + piData2 )
-     var array = [
-        {label : "question1" ,value : piData },
-        {label: "question2", value:  piData2 }, 
-        {label: "question3", value: piData3} ]
-    return  (
-     <PieChart
-      data={ array }
-      width={450}
-      height={400} 
-      radius={110}
-      innerRadius={20}
-      sectorBorderColor="white"
-      title="Pie Chart" />
-    )}
-    }
-
 
   class Chart extends React.Component {
   render() {
@@ -365,8 +344,6 @@ const questionItemSecond = [ { item : 'Lorem ipsum dolor sit amet, consectetur a
 }, { item : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor?', id : 5
 }
 ]
-
-
 
 class CreateItemSecond extends React.Component {
     constructor(props){
@@ -1006,6 +983,4 @@ class ListThird extends React.Component {
     }
     }
 
-  
-      
-    
+

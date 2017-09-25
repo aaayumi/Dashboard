@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Arrowup from './img/arrowup.png';
 import Arrowdown from './img/arrowdown.png';
-import rd3 from 'rd3';
 import Dotmenu from './img/dotmenu.png';
 import Edit from './img/edit.png';
 import Trashbin from './img/trashbin.png';
@@ -15,7 +14,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-    
+import {Pie} from 'react-chartjs-2';
 
 // import from questions
 
@@ -30,9 +29,9 @@ let piData = 0;
 let piData2 = 0;
 let piData3 = 0;
 
- var newpiData = parseFloat( piData / 100 * 1000);
- var newpiData2 = parseFloat( piData2 / 100  * 1000);
- var newpiData3 = parseFloat( piData3 /100 * 1000);
+let newpiData = parseFloat( piData / 100 * 1000);
+let newpiData2 = parseFloat( piData2 / 100  * 1000);
+let newpiData3 = parseFloat( piData3 /100 * 1000);
 
 class CreateItem extends React.Component {
     constructor(props){
@@ -1022,7 +1021,6 @@ class ListThird extends React.Component {
     }
  
     render(){
-    var PieChart = rd3.PieChart
     const CategoriesPanel = this.state.slideOpen? "slideOpen" : "";
     const { length } = this.props
     console.log( 'result' + piData )
@@ -1034,16 +1032,9 @@ class ListThird extends React.Component {
 
     <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
     </div>
-     <PieChart
-      data={ this.state.piData }
-      width={450}
-      height={400} 
-      radius={110}
-      innerRadius={20}
-      sectorBorderColor="white"
-      />
-     <button onClick={this.update} className="chartButton" >Update Information</button>
+    
      <div className="clear">
+     <PieChart />
      <List  />
      <ListSecond />
      <ListThird />
@@ -1053,37 +1044,45 @@ class ListThird extends React.Component {
     }
 }
 
-class DataChart extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-           piData : [{label: "question1", value: 40}, {label: "question2", value: 50 }, {label: "question3", value: 30 }]
-    }
-    }
+const data = {
+    labels: [
+        'question1',
+        'question2',
+        'question3',
+        'question4',
+        'question5'
+    ],
+    datasets: [{
+        data: ['piData', 'piData2', 'piData3'],
+        backgroundColor: [
+        'orange',
+        'blue',
+        'red',
+        'purple',
+        'green'
+        ],
+        hoverBackgroundColor: [
+        'orange',
+        'blue',
+        'red',
+        'purple',
+        'green'
+        ]
+    }]
+};
 
-   render() {
-    var PieChart = rd3.PieChart
-    var newpiData = piData / 100 ;
-    var newpiData2 = piData2 / 100;
-    var newpiData3 = piData3 /100 ;
+class PieChart extends React.Component {
+ 
 
-    var array = [
-        {label : "question1" ,value : newpiData },
-        {label: "question2", value:  newpiData2 }, 
-        {label: "question3", value: newpiData3} ]
+  render() {
+    return (
+      <div>
+        <h2>Pie Example</h2>
+        <Pie data={data} />
+      </div>
+   );
+}
+}
 
-    this.state.piData = array;
-    return  (
-     <PieChart
-      data={ this.state.piData }
-      width={450}
-      height={400} 
-      radius={110}
-      innerRadius={20}
-      sectorBorderColor="white"
-      title="Pie Chart" />
-    )}
-    }
-      
-
+  
 

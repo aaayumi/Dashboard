@@ -23,6 +23,9 @@ import { MuiThemeProvider} from 'material-ui';
 import Arrowup from './img/arrowup.png';
 import Arrowdown from './img/arrowdown.png';
 
+import {Pie} from 'react-chartjs-2';
+
+
 // properties of TableHeader component
 let headerProps = {
   enableSelectAll: false,
@@ -240,7 +243,7 @@ class UserRow extends React.Component {
 }
 
 
-class PaymentTable extends React.Component {
+export default class PaymentTable extends React.Component {
   render() {
     return(
     <div>
@@ -249,4 +252,6 @@ class PaymentTable extends React.Component {
 );
 }
 }
-export default PaymentTable;
+
+
+

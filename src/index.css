@@ -391,6 +391,13 @@ font-size: 50px;
     display: inline-block;
 }
 
+.popoverToggle {
+    margin-right: 8px;
+    margin-top: 5px;
+    float: right;
+    font-size: 15px;
+}
+
 /**** Categories ****/
 
 #chart {

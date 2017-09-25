@@ -51,7 +51,7 @@ class Home extends React.Component{
   };
 
     render(){
-    const PaymentPanel = this.state.slideOpen? "slideOpen" : "";
+      const PaymentPanel = this.state.slideOpen? "slideOpen" : "";
     return(
     <div>
     <div id="PaymentPanel" className={PaymentPanel}>
@@ -60,10 +60,12 @@ class Home extends React.Component{
       <Popover
           open={this.state.open}
           anchorEl={this.state.anchorEl}
-          anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+          anchorOrigin={{horizontal: 'right', vertical: 'top'}}
           targetOrigin={{horizontal: 'right', vertical: 'top'}}
           onRequestClose={this.handleRequestClose}
         >
+                <p className="popoverToggle" onClick={this.handleRequestClose}> ▼ </p>
+
           <Menu>
            <p className="menuItem" onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
             <p className="menuItem"  onClick={this.clickHandle}>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
