@@ -296,7 +296,7 @@ font-size: 50px;
     flex-direction: column;
  }   
 
-  .header, .row {
+.header, .row {
       display: flex;
 }
 
@@ -402,7 +402,7 @@ font-size: 50px;
 
 #chart {
     margin-top: -20px;
-    height: 190px;
+   
     background-color: #e324e3;
     background: -webkit-linear-gradient(left, #e324e3 , #691dba); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right, #e324e3, #691dba); /* For Opera 11.1 to 12.0 */
@@ -431,7 +431,7 @@ font-size: 50px;
 }
 
 .categoriesSlide {
-    padding-top: 200px;
+    padding-top: 30px;
     padding-left: 900px;
     background-color: #e324e3;
     background: -webkit-linear-gradient(left, #e324e3 , #691dba); /* For Safari 5.1 to 6.0 */
@@ -453,7 +453,7 @@ font-size: 50px;
 }
 
 .slideOpen .categoriesSlide{
-    padding-top: 720px;
+    padding-top: 250px;
     padding-left: 900px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -499,6 +499,36 @@ font-size: 50px;
 
 .clear {
     clear: both;
+}
+
+.chartjs-render-monitor {
+    height: 200px !important;
+    width: 400px !important;
+    padding-left:  200px;
+    padding-top: 50px;
+   }
+
+.chartButton {
+    float: right;
+    margin-right: 600px;
+    margin-top: -30px;
+}
+
+.slideOpen .chartjs-render-monitor {
+    padding-top: 200px;
+    padding-left: 100px;
+    height: 470px !important;
+    width: 100% !important;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.slideOpen .chartjs-render-monitor .chartButton {
+    float: right;
+    margin-right: 600px;
+    margin-top: -30px;
 }
 
 /*** Questions ***/

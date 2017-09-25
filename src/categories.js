@@ -307,13 +307,15 @@ class List extends React.Component {
         <div>
        
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "orange"}}>Advice + FAQ </div>
+        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "orange", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Advice + FAQ  </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItem.length } />
+        </div>
+
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionList questionItem={this.state.questionItem} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
         <CreateItem questionItem={this.state.questionItem} createItem={this.createItem.bind(this)} />
         </div>
         </div>
-        <Chart length={ questionItem.length } />
+       
         </div>);
     }
     }
@@ -322,7 +324,7 @@ class List extends React.Component {
   render() {
     const { length } = this.props
     return (
-      <div>Chart: {length}</div>
+      <div>View all: {length}</div>
     )
   }
 }
@@ -617,13 +619,12 @@ class ListSecond extends React.Component {
         return(
         <div>
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "blue"}}>Product Recs </div>
+        <div className="titleElement"  style={{"flex": "1", "backgroundColor" : "blue", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Product Recs </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}}length={ questionItemSecond.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionListSecond questionItemSecond={this.state.questionItemSecond} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
         <CreateItemSecond questionItemSecond={this.state.questionItemSecond} createItem={this.createItem.bind(this)} />
         </div>
          </div>
-         <Chart length={ questionItemSecond.length } />
          </div>);
     }
     }
@@ -915,13 +916,12 @@ class ListThird extends React.Component {
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "red"}}>Update</div>
+        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "red", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Update</div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemThird.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionListThird questionItemThird={this.state.questionItemThird} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
         <CreateItemThird questionItemThird={this.state.questionItemThird} createItem={this.createItem.bind(this)} />
         </div>
         </div>
-        <Chart length={ questionItemThird.length } />
         </div>);
     }
     }
@@ -1212,13 +1212,12 @@ class ListFourth extends React.Component {
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "purple"}}>Update</div>
+        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "purple","color": "white", "textAlign": "center", "width": "150px"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Complaint</div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemFourth.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionListFourth questionItemFourth={this.state.questionItemFourth} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
         <CreateItemFourth questionItemFourth={this.state.questionItemFourth} createItem={this.createItem.bind(this)} />
         </div>
          </div>
-         <Chart length={ questionItemFourth.length } />
          </div>);
     }
     }
@@ -1509,13 +1508,12 @@ class ListFifth extends React.Component {
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "green"}}>Update</div>
+        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "green", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Others </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemFifth.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionListFifth questionItemFifth={this.state.questionItemFifth} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
         <CreateItemFifth questionItemFifth={this.state.questionItemFifth} createItem={this.createItem.bind(this)} />
         </div>
          </div>
-         <Chart length={ questionItemFifth.length } />
          </div>);
     }
     }
@@ -1607,15 +1605,12 @@ class ListFifth extends React.Component {
    return(
     <div>
     <div id="chart" className={CategoriesPanel}>
-
-    <p>Data comes here</p>
-
+    <Pie data={data}/>
     <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
-    </div>
-     <Pie data={data}/>
-     <button onClick={this.update} className="chartButton" >Update Information</button>
+    <button onClick={this.update} className="chartButton" >Update Information</button></div>
+     
      <div className="clear">
-
+  
      <List  />
      <ListSecond />
      <ListThird />
