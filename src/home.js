@@ -52,6 +52,7 @@ class Home extends React.Component{
 
     render(){
       const PaymentPanel = this.state.slideOpen? "slideOpen" : "";
+      
     return(
     <div>
     <div id="PaymentPanel" className={PaymentPanel}>
