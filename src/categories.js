@@ -48,11 +48,11 @@ class CreateItem extends React.Component {
     });
   }
 
-   handleOpen = () => {
+    handleOpen = () => {
     this.setState({open: true});
   };
 
-  handleClose = () => {
+   handleClose = () => {
     this.setState({open: false});
   };
 
@@ -77,19 +77,19 @@ class CreateItem extends React.Component {
         return(
              <div className="createNew">
              <p> Add new ? </p>
-            <div className="addSample" onClick={this.handleOpen}><img src={Add} className="add" alt="add"/></div>
-            <Dialog
-            title="Add a new question"
-            modal={false}
-            open={this.state.open}
-            onRequestClose={this.handleClose}
-            >
-            <form onSubmit={this.handleCreate.bind(this)}   >
-            <input type="text" placeholder="New Question" ref="newItemInput" />
-            <button onClick={this.handleClose}>Submit</button>
-            </form>
-            </Dialog>
-            </div>
+             <div className="addSample" onClick={this.handleOpen}><img src={Add} className="add" alt="add"/></div>
+             <Dialog
+             title="Add a new question"
+             modal={false}
+             open={this.state.open}
+             onRequestClose={this.handleClose}
+             >
+             <form onSubmit={this.handleCreate.bind(this)}   >
+             <input type="text" placeholder="New Question" ref="newItemInput" />
+             <button onClick={this.handleClose}>Submit</button>
+             </form>
+             </Dialog>
+             </div>
             );
     }
 }
@@ -237,6 +237,13 @@ render() {
 }
 
 class QuestionList extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      piData : piData
+    }
+  }
+
     renderItems() {
         return this.props.questionItem.map((item, index) => <QuestionItem key={index} {...item} {...this.props} />);
     }
@@ -255,7 +262,14 @@ class List extends React.Component {
         this.state={
             questionItem
           }
+     this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
+     this.counter = 0;
+     this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
     }
+
+    doParentToggleFromChild(){  
+     this.props.parentToggle();
+   }
 
     createItem(item){
         this.state.questionItem.unshift({
@@ -267,6 +281,7 @@ class List extends React.Component {
         this.setState({
             questionItem : this.state.questionItem
         });
+        this.props.parentToggle();
     }
 
     findItem(item) {
@@ -286,6 +301,7 @@ class List extends React.Component {
         let length1 = questionItem.length;
         
         this.setState({ questionItem : this.state.questionItem });
+        this.props.parentToggle();
      }
 
     deleteItem(item) {
@@ -294,7 +310,11 @@ class List extends React.Component {
          this.setState({
             questionItem : this.state.questionItem
         });
-
+        piData = this.state.questionItem.length;
+        this.setState({
+            piData : piData
+        })
+         this.props.parentToggle();
     }
 
     render() {
@@ -310,11 +330,10 @@ class List extends React.Component {
         </div>
 
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
-        <QuestionList questionItem={this.state.questionItem} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
-        <CreateItem questionItem={this.state.questionItem} createItem={this.createItem.bind(this)} />
+        <QuestionList questionItem={this.state.questionItem} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild } />
+        <CreateItem questionItem={this.state.questionItem} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild }/>
         </div>
         </div>
-       
         </div>);
     }
     }
@@ -565,7 +584,12 @@ class ListSecond extends React.Component {
             questionItemSecond,
             itemSecond : questionItemSecond.length
           }
+         this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
     }
+    
+      doParentToggleFromChild(){  
+     this.props.parentToggle();
+   }
 
     createItem(item){
         this.state.questionItemSecond.unshift({
@@ -577,6 +601,7 @@ class ListSecond extends React.Component {
         this.setState({
             questionItemSecond : this.state.questionItemSecond
         });
+        this.props.parentToggle();
     }
 
     findItem(item) {
@@ -598,6 +623,7 @@ class ListSecond extends React.Component {
          this.setState({
             questionItemSecond : this.state.questionItemSecond
         });
+        this.props.parentToggle();
     }
 
     deleteItem(item) {
@@ -609,6 +635,7 @@ class ListSecond extends React.Component {
         this.setState({
             questionItemSecond : this.state.questionItemSecond
         });
+        this.props.parentToggle();
     }
 
     render() {
@@ -620,8 +647,8 @@ class ListSecond extends React.Component {
         <div className="list" style={{"display" : "flex"}}>
         <div className="titleElement"  style={{"flex": "1", "backgroundColor" : "blue", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Product Recs </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}}length={ questionItemSecond.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
-        <QuestionListSecond questionItemSecond={this.state.questionItemSecond} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
-        <CreateItemSecond questionItemSecond={this.state.questionItemSecond} createItem={this.createItem.bind(this)} />
+        <QuestionListSecond questionItemSecond={this.state.questionItemSecond} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild } />
+        <CreateItemSecond questionItemSecond={this.state.questionItemSecond} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild } />
         </div>
          </div>
          </div>);
@@ -861,7 +888,12 @@ class ListThird extends React.Component {
         this.state={
             questionItemThird
           }
+     this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
     }
+
+      doParentToggleFromChild(){  
+     this.props.parentToggle();
+   }
 
     createItem(item){
         this.state.questionItemThird.unshift({
@@ -873,6 +905,7 @@ class ListThird extends React.Component {
         this.setState({
             questionItemThird : this.state.questionItemThird
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemThird.length)
     }
 
@@ -895,6 +928,7 @@ class ListThird extends React.Component {
          this.setState({
             questionItemThird : this.state.questionItemThird
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemThird.length)
     }
 
@@ -905,6 +939,7 @@ class ListThird extends React.Component {
         this.setState({
             questionItemThird : this.state.questionItemThird
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemThird.length)
     }
 
@@ -917,8 +952,8 @@ class ListThird extends React.Component {
         <div className="list" style={{"display" : "flex"}}>
         <div className="titleElement" style={{"flex": "1", "backgroundColor" : "red", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Update</div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemThird.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
-        <QuestionListThird questionItemThird={this.state.questionItemThird} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
-        <CreateItemThird questionItemThird={this.state.questionItemThird} createItem={this.createItem.bind(this)} />
+        <QuestionListThird questionItemThird={this.state.questionItemThird} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild }/>
+        <CreateItemThird questionItemThird={this.state.questionItemThird} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild } />
         </div>
         </div>
         </div>);
@@ -941,6 +976,7 @@ const questionItemFourth = [ { item : 'Lorem ipsum dolor sit amet, consectetur a
             open: false
         };
      this.toggle = this.toggle.bind(this);
+
     }
 
     toggle() {
@@ -1155,7 +1191,12 @@ class ListFourth extends React.Component {
         this.state={
             questionItemFourth
           }
+     this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
     }
+
+      doParentToggleFromChild(){  
+     this.props.parentToggle();
+   }
 
     createItem(item){
         this.state.questionItemFourth.unshift({
@@ -1167,6 +1208,7 @@ class ListFourth extends React.Component {
         this.setState({
             questionItemFourth : this.state.questionItemFourth
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemFourth.length)
     }
 
@@ -1189,6 +1231,7 @@ class ListFourth extends React.Component {
         this.setState({
             questionItemFourth : this.state.questionItemFourth
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemFourth.length)
     }
 
@@ -1200,6 +1243,7 @@ class ListFourth extends React.Component {
         this.setState({
             questionItemFourth : this.state.questionItemFourth
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemFourth.length)
     }
 
@@ -1213,8 +1257,8 @@ class ListFourth extends React.Component {
         <div className="list" style={{"display" : "flex"}}>
         <div className="titleElement" style={{"flex": "1", "backgroundColor" : "purple","color": "white", "textAlign": "center", "width": "150px"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Complaint</div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemFourth.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
-        <QuestionListFourth questionItemFourth={this.state.questionItemFourth} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
-        <CreateItemFourth questionItemFourth={this.state.questionItemFourth} createItem={this.createItem.bind(this)} />
+        <QuestionListFourth questionItemFourth={this.state.questionItemFourth} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild } />
+        <CreateItemFourth questionItemFourth={this.state.questionItemFourth} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild } />
         </div>
          </div>
          </div>);
@@ -1453,7 +1497,12 @@ class ListFifth extends React.Component {
         this.state={
             questionItemFifth
           }
+     this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
     }
+
+  doParentToggleFromChild(){  
+     this.props.parentToggle();
+   }
 
     createItem(item){
         this.state.questionItemFifth.unshift({
@@ -1465,6 +1514,7 @@ class ListFifth extends React.Component {
         this.setState({
             questionItemFifth : this.state.questionItemFifth
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemFifth.length)
     }
 
@@ -1487,6 +1537,7 @@ class ListFifth extends React.Component {
         this.setState({
             questionItemFifth : this.state.questionItemFifth
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemFifth.length)
     }
 
@@ -1497,6 +1548,7 @@ class ListFifth extends React.Component {
         this.setState({
             questionItemFifth : this.state.questionItemFifth
         });
+        this.props.parentToggle();
         console.log(this.state.questionItemFifth.length)
     }
 
@@ -1509,8 +1561,8 @@ class ListFifth extends React.Component {
         <div className="list" style={{"display" : "flex"}}>
         <div className="titleElement" style={{"flex": "1", "backgroundColor" : "green", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Others </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemFifth.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
-        <QuestionListFifth questionItemFifth={this.state.questionItemFifth} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} />
-        <CreateItemFifth questionItemFifth={this.state.questionItemFifth} createItem={this.createItem.bind(this)} />
+        <QuestionListFifth questionItemFifth={this.state.questionItemFifth} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild }/>
+        <CreateItemFifth questionItemFifth={this.state.questionItemFifth} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild }/>
         </div>
          </div>
          </div>);
@@ -1526,12 +1578,22 @@ class ListFifth extends React.Component {
         super(props);
         this.state = {
             slideOpen : false,
-            piData : piData
+            piData : piData,
+            counter:0
           }
  
     this.handleClick = this.handleClick.bind(this);
     this.update = this.update.bind(this);
+    this.doParentToggle = this.doParentToggle.bind(this);
     }
+
+    doParentToggle(){
+      var piData;
+      this.setState({
+        piData : piData
+      })
+      console.log('data' + piData)
+   }
 
     handleClick(){
         this.setState({
@@ -1545,7 +1607,7 @@ class ListFifth extends React.Component {
       this.setState({
         piData : piData
       })
-    console.log('data' + piData)
+      console.log('data' + piData)
     }    
  
     render(){
@@ -1615,12 +1677,12 @@ class ListFifth extends React.Component {
     <button onClick={this.update} className="chartButton">Update Information</button></div>
      
      <div className="clear">
-  
-     <List  />
-     <ListSecond />
-     <ListThird />
-     <ListFourth />
-     <ListFifth />
+        {this.state.counter}
+     <List parentToggle={this.doParentToggle} />
+     <ListSecond parentToggle={this.doParentToggle} />
+     <ListThird parentToggle={this.doParentToggle} />
+     <ListFourth parentToggle={this.doParentToggle} />
+     <ListFifth parentToggle={this.doParentToggle} />
      </div>
      </div>
         )

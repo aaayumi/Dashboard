@@ -1,6 +1,7 @@
 import React from 'react';
 import Arrowup from './img/arrowup.png';
 import Arrowdown from './img/arrowdown.png';
+import PaymentArrow from './img/paymentarrow.png';
 import PaymentTable from './payment.js'
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
@@ -58,11 +59,11 @@ class Home extends React.Component{
     return(
     <div>
     <div id="PaymentPanel" className={PaymentPanel} >
-    <div id="PaymentTitle" >{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 30 Days"}<button className="PaymentToggle" onClick={this.handleTouchTap}>▼</button></div>
+    <div id="PaymentTitle" >{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 30 Days"}<img src={PaymentArrow} className="PaymentArrow PaymentToggle" onClick={this.handleTouchTap}/></div>
     <div id="Dropdown" className={Dropdown}  open={this.state.open}>
     <p className="popoverToggle" onClick={this.handleRequestClose}> </p>
-    <p className="menuItem" onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
-    <p className="menuItem"  onClick={this.clickHandle}>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
+    <p className="menuItem" onClick={this.clickHandle} style={!this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
+    <p className="menuItem"  onClick={this.clickHandle} style={this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
     </div>
 
      

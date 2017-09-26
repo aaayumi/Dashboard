@@ -243,25 +243,33 @@ font-size: 50px;
 .Master, .Visa, .Paypal {
     height: auto;
     width: 100%; 
-    float: left;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    margin-left: -25px;
+    margin-right: 10px;
 }
 
 .visaSample {
-    padding-top: 20px;
+    padding-top:20px;
     height: 30px;
     width: 30px;
+    vertical-align: middle;
 }
 
 .masterSample {
     padding-top: 20px;
     height: 30px;
     width: 30px;
+    background-color: red;
+    vertical-align: middle;
 }
 
 .paypalSample {
     padding-top: 20px;
     height: 30px;
     width: 20px;
+    vertical-align: middle;
 }
 
 .Fail {
@@ -270,8 +278,9 @@ font-size: 50px;
 }
 
 .failSample {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
+    padding-left: 5px;
 }
 
 .Dotmenu {
@@ -369,25 +378,28 @@ font-size: 50px;
     width: 20px;
 }
 
+tbody .tableFour {
+    padding-left: 0px !important;
+}
+
 .paymentTable  table thead th:first-child {
-    width: 30px !important;;
+    width: 30px !important;
+    padding-left: 30px !important;
 }
 
 .paymentTable  table thead th:nth-child(2) {
-    
-    width: 150px !important;;
+    width: 150px !important;
+    padding-left: 0px !important;
 }
 
 .paymentTable  table thead th:nth-child(3) {
-   
-    width: 180px !important;;
+    width: 180px !important;
+    padding-left: 0px !important;
 }
 .paymentTable  table thead th:nth-child(4) {
-    
     width: 660px !important;;
 }
-.paymentTable  table thead th:nth-child(5) {
-   
+.paymentTable  table thead th:nth-child(5) {  
     width: 60px !important;;
 }
 .paymentTable  table thead th:nth-child(6) {
@@ -412,15 +424,27 @@ font-size: 50px;
 #Dropdown.show {
     display: block;
     background-color: red;
-    margin-top: 0px;
-    margin-left: 20px;
-    padding-left: 5px;
+    margin-top: 3px;
+    margin-left: 43px;
+    margin-right: 30px;
+    padding-right: 0px;
+    padding-left: -10px;
+    padding-bottom: 5px;
     width: 240px;
     height: 100px;
     font-size: 20px;
     color: white;
     border: 1px solid white;
     background-color:  #b045cb;
+}
+
+#Dropdown p {
+    margin-left: 32px;
+}
+
+.PaymentArrow {
+    vertical-align: middle; 
+    margin-left: 23px;
 }
 
 /* #PaymentTitle.close {
@@ -611,7 +635,7 @@ font-size: 50px;
     height: 30px;
 }
 
-.editSample  , .trashbinSample ,.dotmenuquestionSample {
+.editSample, .trashbinSample ,.dotmenuquestionSample {
    display: inline-block;
    margin-left: 10px;
 }

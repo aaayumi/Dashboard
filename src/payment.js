@@ -167,7 +167,8 @@ class SortableHeader extends React.Component {
   
   render(){
   let style = {
-    cursor: "pointer"
+    cursor: "pointer",
+    color: "#BBBBBB"
   }
   if(this.props.isSortColumn){
     style.fontWeight = "bold";
@@ -214,8 +215,7 @@ class UserRow extends React.Component {
     <TableRow className="tableRow">
       <TableRowColumn className="tableOne">{this.props.payment=="PayPal"? <div className="failSample"> <img src={Fail} alt="Fail" className="Fail"/></div> : <div className="checkSample"><img src={Check} alt="Check" className="Check"/></div> }</TableRowColumn>
       <TableRowColumn className="tableTwo">{this.props.date}</TableRowColumn>
-      <TableRowColumn className="tableThree">{this.props.payment=="Visa" ?  <div className="visaSample"> <img src={Visa} alt="Visa" className="Visa"/> </div>:  (this.props.payment=="PayPal" ?   <div className="paypalSample"><img src={Paypal} alt="Paypal" className="Master"/></div> :  <div className="masterSample"> <img src={Master} alt="Master" className="Master"/></div>)}          
-         &nbsp; &nbsp;  &nbsp;  {this.props.payment}</TableRowColumn>
+      <TableRowColumn className="tableThree">{this.props.payment=="Visa" ? <img src={Visa} alt="Visa" className="Visa"/>:  (this.props.payment=="PayPal" ?  <img src={Paypal} alt="Paypal" className="Paypal"/> :  <img src={Master} alt="Master" className="Master"/>)}{this.props.payment}</TableRowColumn>
       <TableRowColumn className="tableFour">{this.props.narrative}</TableRowColumn>
       <TableRowColumn className="tableFive">{this.props.amount}</TableRowColumn>
       <TableRowColumn className="tableSix"><div className="dotmenuSample"><img src={Dotmenu} alt="Dotmenu" className="Dotmenu" onClick={this.handleTouchTap} /> </div></TableRowColumn>
