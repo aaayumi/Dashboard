@@ -938,7 +938,7 @@ class ListThird extends React.Component {
         let selectedItem = this.findItem(oldItem);
         selectedItem.item = newItem;
        
-         let length2 = questionItemThird.length;
+        let length2 = questionItemThird.length;
         
         var array = [{label : "question1" ,value : length2 },
         {label : "question2" , value : length2 },

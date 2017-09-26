@@ -129,8 +129,7 @@ class QuestionItem extends React.Component {
       popOver: false,
     });
   };
-
-    
+  
     toggle() {
     this.setState({
       modal: !this.state.modal
@@ -1557,7 +1556,7 @@ class ListFifth extends React.Component {
      
       var totalData = piData + piData2 + piData3 + piData4 + piData5;
 
-      let newpiData =  function() {
+       let newpiData =  function() {
        return parseInt((piData /  totalData ) * 100 ) };
 
        let newpiData2 =  function() {
@@ -1574,7 +1573,7 @@ class ListFifth extends React.Component {
 
        console.log('update data ' + newpiData())
 
-      console.log('question item piData parent component' + piData)
+       console.log('question item piData parent component' + piData)
 
 
       const data = {
@@ -1596,6 +1595,12 @@ class ListFifth extends React.Component {
         ],
         hoverBackgroundColor: [
         'orange',
+        'blue',
+        'red',
+        'purple',
+        'green'
+        ],
+        borderColor: [ 'orange',
         'blue',
         'red',
         'purple',

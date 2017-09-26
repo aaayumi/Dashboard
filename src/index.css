@@ -182,19 +182,26 @@ header ul {
     margin-left: 50px;
 }
 
-.PaymentTitle {
+#PaymentTitle {
     padding-top: 35px;
     padding-left: 75px;
     font-size: 20px;
 }
 
-.PaymentTitle button {
+#PaymentTitle button {
     border: none;
     background-color: #e324e3;
     color: white;
 }
 
-.paymentSum {
+#paymentSum.close { 
+display: none;
+margin-top: 20px;
+font-size: 50px;
+}
+
+#paymentSum {
+display: block;
 margin-top: 20px;
 font-size: 50px;
 }
@@ -397,6 +404,28 @@ font-size: 50px;
     float: right;
     font-size: 15px;
 }
+
+#Dropdown {
+    display: none;
+}
+
+#Dropdown.show {
+    display: block;
+    background-color: red;
+    margin-top: 0px;
+    margin-left: 20px;
+    padding-left: 5px;
+    width: 240px;
+    height: 100px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid white;
+    background-color:  #b045cb;
+}
+
+/* #PaymentTitle.close {
+    display: none;
+} */
 
 /**** Categories ****/
 
@@ -630,3 +659,4 @@ footer p {
 .chartButton {
     margin-left: 150px;
 }
+

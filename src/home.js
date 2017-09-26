@@ -13,17 +13,18 @@ class Home extends React.Component{
         this.state = {
             slideOpen : false,
             priceBar: false,
-            open: false
+            open: false,
         }
    this.handleClick = this.handleClick.bind(this);
    this.clickHandle = this.clickHandle.bind(this);
     }
+    
 
     handleClick() {
         this.setState({
             slideOpen : !this.state.slideOpen
         })
-
+    console.log("slideOpen" + !this.state.slideOpen)
     }
 
     clickHandle() {
@@ -34,7 +35,7 @@ class Home extends React.Component{
     console.log(!this.state.priceBar)
     }
     
-     handleTouchTap = (event) => {
+    handleTouchTap = (event) => {
     // This prevents ghost click.
     event.preventDefault();
 
@@ -52,27 +53,22 @@ class Home extends React.Component{
 
     render(){
       const PaymentPanel = this.state.slideOpen? "slideOpen" : "";
+      const Dropdown = this.state.open? "show" : "";
       
     return(
     <div>
-    <div id="PaymentPanel" className={PaymentPanel}>
-    <div className="PaymentTitle">{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 30 Days"}<button className="PaymentToggle" onClick={this.handleTouchTap}>▼</button></div>
-  
-      <Popover
-          open={this.state.open}
-          anchorEl={this.state.anchorEl}
-          anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-          targetOrigin={{horizontal: 'right', vertical: 'top'}}
-          onRequestClose={this.handleRequestClose}
-        >
-                <p className="popoverToggle" onClick={this.handleRequestClose}> ▼ </p>
+    <div id="PaymentPanel" className={PaymentPanel} >
+    <div id="PaymentTitle" >{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 30 Days"}<button className="PaymentToggle" onClick={this.handleTouchTap}>▼</button></div>
+    <div id="Dropdown" className={Dropdown}  open={this.state.open}>
+    <p className="popoverToggle" onClick={this.handleRequestClose}> </p>
+    <p className="menuItem" onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
+    <p className="menuItem"  onClick={this.clickHandle}>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
+    </div>
 
-          <Menu>
-           <p className="menuItem" onClick={this.clickHandle}>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
-            <p className="menuItem"  onClick={this.clickHandle}>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
-          </Menu>
-        </Popover>
-      <h2 className="paymentSum">{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>
+     
+    <h2 id="paymentSum" className={!this.state.open? "" : "close"}>{!this.state.priceBar? "$9,964.55" : "$19,929.1"}</h2>
+    
+
     <ul className="paymentTool">
     <li>
     <div onClick={this.handleTouchTap} className="tool">VISA <br />  {!this.state.priceBar? "$9,504.13" : "$19,008.26"}</div></li>
@@ -87,7 +83,6 @@ class Home extends React.Component{
     <ul>
     </ul>
     </div>
-    
     </div>
         )
     }
