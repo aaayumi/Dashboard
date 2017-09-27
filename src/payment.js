@@ -35,10 +35,10 @@ let headerProps = {
 
 // initial set of rows, simulating data from the database
 let rows = [
-  {date: "12:30 12.9.2017", payment: "MasterCard", narrative: "restige Cosmetics, Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$912.51" , uniqueId: 0 },
-  {date: "11:30 12.9.2017", payment: "Visa", narrative: "Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$744.51", uniqueId: 1 },
+  {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 3 },
   {date: "13:30 12.9.2017", payment: "PayPal", narrative: "Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$12.51", uniqueId: 2 },
-  {date: "20:30 12.9.2017", payment: "MasterCard", narrative: "Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$16.51", uniqueId: 3 }
+  {date: "12:30 12.9.2017", payment: "MasterCard", narrative: "Restige Cosmetics, Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$912.51" , uniqueId: 0 },
+  {date: "11:30 12.9.2017", payment: "Visa", narrative: "Total Intensity Eyeliner Long Lasting Intense Color, Deepest Black, 1.2 g (.04 oz)", amount: "$744.51", uniqueId: 1 }
 ];
 
 let rows2 = [
@@ -153,7 +153,9 @@ class SortableHeader extends React.Component {
                  toggle : false
                 };
   this.handleClick = this.handleClick.bind(this);
+  this.click = this.click.bind(this);
   }
+
    handleClick = (event) => {
     // This prevents ghost click.
     event.preventDefault();
@@ -164,6 +166,14 @@ class SortableHeader extends React.Component {
     console.log(!this.state.toggle)
   };
 
+  click() {
+     // click event for sorting table
+     this.props.onClicked();
+     // click event for toggling 
+     this.setState({
+      toggle : !this.state.toggle
+    });
+  }
   
   render(){
   let style = {
@@ -176,7 +186,7 @@ class SortableHeader extends React.Component {
   }
   return (
     <TableHeaderColumn>
-      <div style={style} onClick={() => this.props.onClicked()}>{this.props.name}   <div className="paymentToggle" onClick={this.handleClick}>{this.props.name == "" ? "" : (this.state.toggle ? "▼": "▲" )} </div></div>
+      <div style={style} >{this.props.name}<div className="paymentToggle" onClick={this.click} >{this.props.name == "" ? "" : (this.state.toggle ? "▲": "▼" )} </div></div>
     </TableHeaderColumn>
   );
 }

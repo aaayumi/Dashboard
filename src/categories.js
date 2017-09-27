@@ -134,7 +134,6 @@ class QuestionItem extends React.Component {
     this.setState({
       modal: !this.state.modal
      });
-    console.log(this.state.modal)
      }
 
 
@@ -269,10 +268,11 @@ class List extends React.Component {
 
     doParentToggleFromChild(){  
      this.props.parentToggle();
+     this.props.update();
    }
 
     createItem(item){
-        this.state.questionItem.unshift({
+        this.state.questionItem.push({
             item : item,
         });
 
@@ -321,7 +321,6 @@ class List extends React.Component {
         const { questionItem } = this.state;
          const { length } = this.props
          piData = questionItem.length 
-         console.log('question item piData' + piData)
         return (
         <div>
        
@@ -462,7 +461,6 @@ class QuestionItemSecond extends React.Component {
     this.setState({
       modal: !this.state.modal
      });
-    console.log(this.state.modal)
      }
 
 
@@ -587,12 +585,13 @@ class ListSecond extends React.Component {
          this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
     }
     
-      doParentToggleFromChild(){  
+   doParentToggleFromChild(){  
      this.props.parentToggle();
+     this.props.update();
    }
 
     createItem(item){
-        this.state.questionItemSecond.unshift({
+        this.state.questionItemSecond.push({
             item : item
         });
 
@@ -641,7 +640,6 @@ class ListSecond extends React.Component {
     render() {
         const { questionItemSecond } = this.state
         piData2 = questionItemSecond.length 
-      console.log('piData2' + piData2)
         return(
         <div>
         <div className="list" style={{"display" : "flex"}}>
@@ -767,7 +765,6 @@ class QuestionItemThird extends React.Component {
     this.setState({
       modal: !this.state.modal
      });
-    console.log(this.state.modal)
      }
 
 
@@ -893,10 +890,11 @@ class ListThird extends React.Component {
 
       doParentToggleFromChild(){  
      this.props.parentToggle();
+      this.props.update();
    }
 
     createItem(item){
-        this.state.questionItemThird.unshift({
+        this.state.questionItemThird.push({
             item : item
         });
   
@@ -906,7 +904,6 @@ class ListThird extends React.Component {
             questionItemThird : this.state.questionItemThird
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemThird.length)
     }
 
     findItem(item) {
@@ -929,7 +926,6 @@ class ListThird extends React.Component {
             questionItemThird : this.state.questionItemThird
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemThird.length)
     }
 
     deleteItem(item) {
@@ -940,13 +936,11 @@ class ListThird extends React.Component {
             questionItemThird : this.state.questionItemThird
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemThird.length)
     }
 
     render() {
         const { questionItemThird } = this.state
          piData3 = questionItemThird.length 
-         console.log('piData' + piData3)
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
@@ -1071,7 +1065,6 @@ class QuestionItemFourth extends React.Component {
     this.setState({
       modal: !this.state.modal
      });
-    console.log(this.state.modal)
      }
 
   onEditClick(){
@@ -1199,7 +1192,7 @@ class ListFourth extends React.Component {
    }
 
     createItem(item){
-        this.state.questionItemFourth.unshift({
+        this.state.questionItemFourth.push({
             item : item,
         });
 
@@ -1209,7 +1202,6 @@ class ListFourth extends React.Component {
             questionItemFourth : this.state.questionItemFourth
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemFourth.length)
     }
 
     findItem(item) {
@@ -1232,7 +1224,6 @@ class ListFourth extends React.Component {
             questionItemFourth : this.state.questionItemFourth
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemFourth.length)
     }
 
 
@@ -1244,14 +1235,12 @@ class ListFourth extends React.Component {
             questionItemFourth : this.state.questionItemFourth
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemFourth.length)
     }
 
 
     render() {
         const { questionItemFourth } = this.state
          piData4 = questionItemFourth.length 
-         console.log('piData' + piData3)
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
@@ -1376,7 +1365,6 @@ class QuestionItemFifth extends React.Component {
     this.setState({
       modal: !this.state.modal
      });
-    console.log(this.state.modal)
      }
 
 
@@ -1505,7 +1493,7 @@ class ListFifth extends React.Component {
    }
 
     createItem(item){
-        this.state.questionItemFifth.unshift({
+        this.state.questionItemFifth.push({
             item : item,
         });
     
@@ -1515,7 +1503,6 @@ class ListFifth extends React.Component {
             questionItemFifth : this.state.questionItemFifth
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemFifth.length)
     }
 
     findItem(item) {
@@ -1538,7 +1525,6 @@ class ListFifth extends React.Component {
             questionItemFifth : this.state.questionItemFifth
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemFifth.length)
     }
 
     deleteItem(item) {
@@ -1549,13 +1535,11 @@ class ListFifth extends React.Component {
             questionItemFifth : this.state.questionItemFifth
         });
         this.props.parentToggle();
-        console.log(this.state.questionItemFifth.length)
     }
 
     render() {
         const { questionItemFifth } = this.state
-         piData5 = questionItemFifth.length 
-         console.log('piData' + piData3)
+         piData5 = questionItemFifth.length;
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
@@ -1578,8 +1562,7 @@ class ListFifth extends React.Component {
         super(props);
         this.state = {
             slideOpen : false,
-            piData : piData,
-            counter:0
+            piData : piData
           }
  
     this.handleClick = this.handleClick.bind(this);
@@ -1588,18 +1571,23 @@ class ListFifth extends React.Component {
     }
 
     doParentToggle(){
-      var piData;
-      this.setState({
+    
+
+    this.setState({
         piData : piData
       })
-      console.log('data' + piData)
+      console.log('-------')
+      console.log('parentToggle' + piData )
+      console.log('parentToggle' + piData2 )
+      console.log('parentToggle' + piData3 )
+      console.log('-------')
+      this.update();
    }
 
     handleClick(){
         this.setState({
             slideOpen : !this.state.slideOpen
         })
-        console.log(!this.state.slideOpen)
     }
     
     update() {
@@ -1607,45 +1595,36 @@ class ListFifth extends React.Component {
       this.setState({
         piData : piData
       })
-      console.log('data' + piData)
+      console.log('-------')
+      console.log('parentToggle' + piData )
+      console.log('parentToggle' + piData2 )
+      console.log('parentToggle' + piData3 )
+      console.log('-------')
     }    
  
     render(){
-     console.log('check' + piData)
      const CategoriesPanel = this.state.slideOpen? "slideOpen" : "";
      const { length } = this.props
-     console.log( 'result' + piData )
+
      
       var totalData = piData + piData2 + piData3 + piData4 + piData5;
 
        let newpiData =  function() {
-       return parseInt((piData /  totalData ) * 100 ) };
+       return parseFloat((piData /  totalData ) * 100 ).toFixed(2) };
 
        let newpiData2 =  function() {
-       return parseInt((piData2 /  totalData ) * 100) };
+       return parseFloat((piData2 /  totalData ) * 100).toFixed(2) };
 
        let newpiData3 =  function() {
-       return  parseInt((piData3 /  totalData ) * 100) };
+       return  parseFloat((piData3 /  totalData ) * 100).toFixed(2) };
 
        let newpiData4 =  function() {
-       return  parseInt((piData4 /  totalData ) * 100) };
+       return parseFloat((piData4 /  totalData ) * 100).toFixed(2) };
 
        let newpiData5 =  function() {
-       return  parseInt((piData5 /  totalData ) * 100) };
-
-       console.log('update data ' + newpiData())
-
-       console.log('question item piData parent component' + piData)
-
+       return parseFloat((piData5 /  totalData ) * 100).toFixed(2) };
 
       const data = {
-      labels: [
-        'question1',
-        'question2',
-        'question3',
-        'question4',
-        'question5'
-       ],
       datasets: [{
         data: [ newpiData() , newpiData2(), newpiData3(), newpiData4(), newpiData5()],
         backgroundColor: [
@@ -1677,7 +1656,6 @@ class ListFifth extends React.Component {
     <button onClick={this.update} className="chartButton">Update Information</button></div>
      
      <div className="clear">
-        {this.state.counter}
      <List parentToggle={this.doParentToggle} />
      <ListSecond parentToggle={this.doParentToggle} />
      <ListThird parentToggle={this.doParentToggle} />

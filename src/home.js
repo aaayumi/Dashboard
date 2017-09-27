@@ -29,6 +29,7 @@ class Home extends React.Component{
     }
 
     clickHandle() {
+        
     this.setState({ 
               priceBar : !this.state.priceBar,
               open: false
@@ -62,8 +63,8 @@ class Home extends React.Component{
     <div id="PaymentTitle" >{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 30 Days"}<img src={PaymentArrow} className="PaymentArrow PaymentToggle" onClick={this.handleTouchTap}/></div>
     <div id="Dropdown" className={Dropdown}  open={this.state.open}>
     <p className="popoverToggle" onClick={this.handleRequestClose}> </p>
-    <p className="menuItem" onClick={this.clickHandle} style={!this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
-    <p className="menuItem"  onClick={this.clickHandle} style={this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
+    <p id="menuItem" onClick={this.clickHandle} style={!this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
+    <p id="menuItem" onClick={this.clickHandle} style={this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
     </div>
 
      
