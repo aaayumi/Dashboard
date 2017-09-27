@@ -132,8 +132,7 @@ class SortableTable extends React.Component {
               {this.renderHeaders()}
           </TableHeader>
           <TableBody>
-            {this.renderRows()}
-             
+            {this.renderRows()}          
           </TableBody>
         </Table>   
       </MuiThemeProvider>

@@ -29,6 +29,7 @@ header ul {
 header li a {
     text-decoration: none;
     color: white;
+    font-size: 20px;
 }
 
 header .firstHeaderItem:hover{
@@ -669,12 +670,24 @@ tbody .tableFour {
 }
 
 .addSample {
-    margin-top: -10px;
-    margin-left: 600px;
+    margin-top: 20px;
+    margin-right: 50px;
+    float: right;
     height: 60px;
     width: 60px;
 }
 
+.item-list td div input {
+    display: none;
+}
+
+.list .actions {
+  
+}
+
+.list .name {
+    width: 900px;
+}
 /***** Footer *****/
 footer {
     margin-top: 1100px;

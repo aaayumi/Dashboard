@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
     "chart.js": "^2.7.0",
+    "chart.piecelabel.js": "^0.8.1",
     "classnames": "^2.2.5",
     "d3": "^3.5.17",
     "font-awesome": "^4.7.0",

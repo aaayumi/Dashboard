@@ -15,7 +15,17 @@ import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import {Pie} from 'react-chartjs-2';
+import 'chart.piecelabel.js';
 
+import {
+  Table,
+  TableBody,
+  TableFooter,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
 
 let piData = 4;
 let piData2 = 5;
@@ -75,9 +85,11 @@ class CreateItem extends React.Component {
 
     render() {
         return(
-             <div className="createNew">
-             <p> Add new ? </p>
-             <div className="addSample" onClick={this.handleOpen}><img src={Add} className="add" alt="add"/></div>
+            <div>
+              <TableRow>
+              <TableRowColumn style={{"width" : "1100px"}}>
+              <div style={{"marginTop" : "20px"}} >Add new ?</div>
+             <div className="addSample" style={{"marginTop" : "-20px"}} onClick={this.handleOpen}><img src={Add} className="add" alt="add"/></div>
              <Dialog
              title="Add a new question"
              modal={false}
@@ -89,7 +101,9 @@ class CreateItem extends React.Component {
              <button onClick={this.handleClose}>Submit</button>
              </form>
              </Dialog>
-             </div>
+            </TableRowColumn>
+            </TableRow>
+            </div>
             );
     }
 }
@@ -193,13 +207,15 @@ class QuestionItem extends React.Component {
     }
 render() {
     return(
-    <div className="questionItem">
-    <span className="name">
+    <div>
+    <TableRow className="tablerow">
+    <TableRowColumn  className="name">
      {this.renderName()}
-    </span>
-    <span className="actions">
+    </TableRowColumn>
+    <TableRowColumn className="actions">
     {this.renderButtons()}
-    </span>
+    </TableRowColumn>
+    </TableRow>
         <Dialog
           title="Edit a question"
           modal={false}
@@ -248,9 +264,11 @@ class QuestionList extends React.Component {
     }
 render() {
     return (
-    <div className="item-list">
+   <Table>
+    <TableBody>
      {this.renderItems()}
-    </div>
+      </TableBody>
+    </Table>
     );
 }
 }
@@ -329,7 +347,9 @@ class List extends React.Component {
         </div>
 
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
+
         <QuestionList questionItem={this.state.questionItem} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild } />
+
         <CreateItem questionItem={this.state.questionItem} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild }/>
         </div>
         </div>
@@ -1158,8 +1178,6 @@ class QuestionItemFourth extends React.Component {
             <MenuItem primaryText="Item4" />
           </Menu>
         </Popover>
-
-
     </div>
     );
 }
@@ -1648,19 +1666,29 @@ class ListFifth extends React.Component {
         'green'
         ]
       }]};
-   return(
+
+      var pieOptions = {
+          pieceLabel: {
+         render: 'value',
+         fontSize: 30,
+         fontColor: '#fff'
+       }
+      };
+      return(
     <div>
     <div id="chart" className={CategoriesPanel}>
-    <Pie style={{"fontSize" : "20px" }}data={data}/>
+    <Pie style={{"fontSize" : "20px" }}data={data} options={pieOptions}/>
     <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
     <button onClick={this.update} className="chartButton">Update Information</button></div>
      
      <div className="clear">
+     
      <List parentToggle={this.doParentToggle} />
      <ListSecond parentToggle={this.doParentToggle} />
      <ListThird parentToggle={this.doParentToggle} />
      <ListFourth parentToggle={this.doParentToggle} />
      <ListFifth parentToggle={this.doParentToggle} />
+     
      </div>
      </div>
         )

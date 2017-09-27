@@ -14,12 +14,11 @@ class Home extends React.Component{
         this.state = {
             slideOpen : false,
             priceBar: false,
-            open: false,
+            open: false
         }
    this.handleClick = this.handleClick.bind(this);
    this.clickHandle = this.clickHandle.bind(this);
     }
-    
 
     handleClick() {
         this.setState({
@@ -34,7 +33,7 @@ class Home extends React.Component{
               priceBar : !this.state.priceBar,
               open: false
      })
-    console.log(!this.state.priceBar)
+    console.log('clickhandle' + !this.state.priceBar)
     }
     
     handleTouchTap = (event) => {
@@ -56,15 +55,15 @@ class Home extends React.Component{
     render(){
       const PaymentPanel = this.state.slideOpen? "slideOpen" : "";
       const Dropdown = this.state.open? "show" : "";
-      
+    
     return(
     <div>
     <div id="PaymentPanel" className={PaymentPanel} >
     <div id="PaymentTitle" >{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 30 Days"}<img src={PaymentArrow} className="PaymentArrow PaymentToggle" onClick={this.handleTouchTap}/></div>
     <div id="Dropdown" className={Dropdown}  open={this.state.open}>
     <p className="popoverToggle" onClick={this.handleRequestClose}> </p>
-    <p id="menuItem" onClick={this.clickHandle} style={!this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
-    <p id="menuItem" onClick={this.clickHandle} style={this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
+    <p id="menuItem" onClick={this.state.priceBar ? this.clickHandle  :  null}  style={!this.state.priceBar? { color:'white', } : {color : '#BBBBBB'} }>{!this.state.priceBar? "Spent Last 14 Days" : "Spent Last 14 Days"}</p>
+    <p id="menuItem" onClick={this.state.priceBar ? null : this.clickHandle} style={this.state.priceBar? { color:'white'} : {color : '#BBBBBB'} }>{this.state.priceBar? "Spent Last 30 Days" : "Spent Last 30 Days"}</p>
     </div>
 
      
