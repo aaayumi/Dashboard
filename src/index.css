@@ -62,7 +62,7 @@ header li a:hover{
 }
 
 header ul .navMenu {
-    text-decoration: none;
+     text-decoration: none;
      display: inline;
      color: white;
 }
@@ -87,9 +87,9 @@ header .avatar {
     margin-top: -100px;
 } */
 
-.menuIcons {
+header .menuIcons {
     float: right;
-    -top: -155px;
+    margin-top: -160px;
 }
 
 .Question , .Bell, .Search {
@@ -125,6 +125,10 @@ header .avatar {
 
 header ul {
       clear: both;
+}
+
+.barChart {
+    float: right;
 }
 
 /**** Payment ****/
@@ -382,6 +386,10 @@ tbody .tableFour {
     padding-left: 0px !important;
 }
 
+.paymentTable {
+    margin-top: 20px;
+}
+
 .paymentTable  table thead th:first-child {
     width: 30px !important;
     padding-left: 30px !important;
@@ -465,7 +473,7 @@ tbody .tableFour {
 
 #chart {
     margin-top: -20px;
-   
+    
     background-color: #e324e3;
     background: -webkit-linear-gradient(left, #e324e3 , #691dba); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(right, #e324e3, #691dba); /* For Opera 11.1 to 12.0 */
@@ -622,6 +630,7 @@ tbody .tableFour {
      padding-right: 40px;
 }
 
+
 .list .createNew {
     color: black;
     border: 1px solid black;
@@ -681,12 +690,12 @@ tbody .tableFour {
     display: none;
 }
 
-.list .actions {
-  
-}
-
 .list .name {
     width: 900px;
+}
+
+.list {
+    margin-top: 20px;
 }
 /***** Footer *****/
 footer {

@@ -15,7 +15,9 @@ import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import {Pie} from 'react-chartjs-2';
+import {HorizontalBar} from 'react-chartjs-2';
 import 'chart.piecelabel.js';
+import 'chartjs-plugin-datalabels';
 
 import {
   Table,
@@ -422,8 +424,10 @@ class CreateItemSecond extends React.Component {
 
     render() {
         return(
-             <div className="createNew">
-             <p> Add new ? </p>
+             <div>
+              <TableRow>
+              <TableRowColumn style={{"width" : "1100px"}}>
+             <div style={{"marginTop" : "20px"}} > Add new ? </div>
             <div className="addSample" onClick={this.handleOpen}><img src={Add} className="add" alt="add"/></div>
             <Dialog
             title="Add a new question"
@@ -436,6 +440,8 @@ class CreateItemSecond extends React.Component {
             <button onClick={this.handleClose}>Submit</button>
             </form>
             </Dialog>
+             </TableRowColumn>
+            </TableRow>
             </div>
             );
     }
@@ -540,13 +546,15 @@ class QuestionItemSecond extends React.Component {
     }
 render() {
     return(
-    <div className="questionItem">
-    <span className="name">
+    <div>
+    <TableRow className="tablerow">
+    <TableRowColumn  className="name">
      {this.renderName()}
-    </span>
-    <span className="actions">
+    </TableRowColumn>
+    <TableRowColumn className="actions">
     {this.renderButtons()}
-    </span>
+    </TableRowColumn>
+    </TableRow>
         <Dialog
           title="Edit a question"
           modal={false}
@@ -578,6 +586,7 @@ render() {
 
 
     </div>
+
     );
 }
 }
@@ -588,9 +597,11 @@ class QuestionListSecond extends React.Component {
     }
 render() {
     return (
-    <div className="item-list">
+    <Table>
+    <TableBody>
      {this.renderItems()}
-    </div>
+    </TableBody>
+    </Table>
     );
 }
 }
@@ -725,8 +736,10 @@ const questionItemThird = [ { item : 'Lorem ipsum dolor sit amet, consectetur ad
 
     render() {
         return(
-             <div className="createNew">
-             <p> Add new ? </p>
+             <div >
+             <TableRow>
+             <TableRowColumn style={{"width" : "1100px"}}>
+            <div style={{"marginTop" : "20px"}} >Add new ?</div>
             <div className="addSample" onClick={this.handleOpen}><img src={Add} className="add" alt="add"/></div>
             <Dialog
             title="Add a new question"
@@ -739,6 +752,8 @@ const questionItemThird = [ { item : 'Lorem ipsum dolor sit amet, consectetur ad
             <button onClick={this.handleClose}>Submit</button>
             </form>
             </Dialog>
+            </TableRowColumn>
+            </TableRow>
             </div>
             );
     }
@@ -844,13 +859,15 @@ class QuestionItemThird extends React.Component {
     }
 render() {
     return(
-    <div className="questionItem">
-    <span className="name">
+    <div>
+    <TableRow className="tablerow">
+    <TableRowColumn  className="name">
      {this.renderName()}
-    </span>
-    <span className="actions">
+    </TableRowColumn>
+    <TableRowColumn className="actions">
     {this.renderButtons()}
-    </span>
+    </TableRowColumn>
+    </TableRow>
         <Dialog
           title="Edit a question"
           modal={false}
@@ -892,9 +909,11 @@ class QuestionListThird extends React.Component {
     }
 render() {
     return (
-    <div className="item-list">
+   <Table>
+    <TableBody>
      {this.renderItems()}
-    </div>
+    </TableBody>
+    </Table>
     );
 }
 }
@@ -1026,8 +1045,10 @@ const questionItemFourth = [ { item : 'Lorem ipsum dolor sit amet, consectetur a
 
     render() {
         return(
-             <div className="createNew">
-             <p> Add new ? </p>
+              <div>
+              <TableRow>
+              <TableRowColumn style={{"width" : "1100px"}}>
+               <div style={{"marginTop" : "20px"}} >Add new ?</div>
              <div className="addSample" onClick={this.handleOpen}><img src={Add} className="add" alt="add"/></div>
              <Dialog
              title="Add a new question"
@@ -1040,6 +1061,8 @@ const questionItemFourth = [ { item : 'Lorem ipsum dolor sit amet, consectetur a
              <button onClick={this.handleClose}>Submit</button>
              </form>
              </Dialog>
+             </TableRowColumn>
+             </TableRow>
              </div>
             );
     }
@@ -1143,13 +1166,15 @@ class QuestionItemFourth extends React.Component {
        }
     render() {
       return(
-      <div className="questionItem">
-      <span className="name">
+         <div>
+      <TableRow className="tablerow">
+      <TableRowColumn  className="name">
       {this.renderName()}
-      </span>
-      <span className="actions">
+      </TableRowColumn>
+      <TableRowColumn className="actions">
       {this.renderButtons()}
-      </span>
+      </TableRowColumn>
+      </TableRow>
         <Dialog
           title="Edit a question"
           modal={false}
@@ -1189,9 +1214,11 @@ class QuestionListFourth extends React.Component {
     }
 render() {
     return (
-    <div className="item-list">
+    <Table>
+    <TableBody>
      {this.renderItems()}
-    </div>
+      </TableBody>
+    </Table>
     );
 }
 }
@@ -1323,8 +1350,10 @@ const questionItemFifth = [ { item : 'Lorem ipsum dolor sit amet, consectetur ad
 
     render() {
         return(
-             <div className="createNew">
-             <p> Add new ? </p>
+             <div>
+              <TableRow>
+              <TableRowColumn style={{"width" : "1100px"}}>
+             <div style={{"marginTop" : "20px"}} >Add new ? </div>
             <div className="addSample" onClick={this.handleOpen}><img src={Add} className="add" alt="add"/></div>
             <Dialog
             title="Add a new question"
@@ -1337,6 +1366,8 @@ const questionItemFifth = [ { item : 'Lorem ipsum dolor sit amet, consectetur ad
             <button onClick={this.handleClose}>Submit</button>
             </form>
             </Dialog>
+            </TableRowColumn>
+            </TableRow>
             </div>
             );
     }
@@ -1442,13 +1473,15 @@ class QuestionItemFifth extends React.Component {
     }
 render() {
     return(
-    <div className="questionItem">
-    <span className="name">
+    <div>
+    <TableRow className="tablerow">
+    <TableRowColumn  className="name">
      {this.renderName()}
-    </span>
-    <span className="actions">
+    </TableRowColumn>
+    <TableRowColumn className="actions">
     {this.renderButtons()}
-    </span>
+    </TableRowColumn>
+    </TableRow>
         <Dialog
           title="Edit a question"
           modal={false}
@@ -1490,9 +1523,11 @@ class QuestionListFifth extends React.Component {
     }
 render() {
     return (
-    <div className="item-list">
+     <Table>
+    <TableBody>
      {this.renderItems()}
-    </div>
+     </TableBody>
+    </Table>
     );
 }
 }
@@ -1619,8 +1654,10 @@ class ListFifth extends React.Component {
       console.log('parentToggle' + piData3 )
       console.log('-------')
     }    
- 
+  
     render(){
+    
+
      const CategoriesPanel = this.state.slideOpen? "slideOpen" : "";
      const { length } = this.props
 
@@ -1642,6 +1679,7 @@ class ListFifth extends React.Component {
        let newpiData5 =  function() {
        return parseFloat((piData5 /  totalData ) * 100).toFixed(2) };
 
+      
       const data = {
       datasets: [{
         data: [ newpiData() , newpiData2(), newpiData3(), newpiData4(), newpiData5()],
@@ -1652,14 +1690,8 @@ class ListFifth extends React.Component {
         'purple',
         'green'
         ],
-        hoverBackgroundColor: [
+        borderColor: [ 
         'orange',
-        'blue',
-        'red',
-        'purple',
-        'green'
-        ],
-        borderColor: [ 'orange',
         'blue',
         'red',
         'purple',
@@ -1669,20 +1701,65 @@ class ListFifth extends React.Component {
 
       var pieOptions = {
           pieceLabel: {
-         render: 'value',
+         render: function (args) {
+                  return args.value + '%';
+                },
          fontSize: 30,
          fontColor: '#fff'
        }
       };
+
+      const bardata = {
+      labels: ['1', '2', '3', '4', '5'],
+      datasets: [
+       {
+      backgroundColor: [
+        'orange',
+        'blue',
+        'red',
+        'purple',
+        'green'
+        ],
+      borderColor: 'black',
+      borderWidth: 1,
+      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+      hoverBorderColor: 'rgba(255,99,132,1)',
+      data: [ newpiData(), newpiData2() , newpiData3()  , newpiData4()  , newpiData5()  ]
+      }
+      ]
+      };
+   
+      let options = {
+        plugins: {
+        datalabels: {
+        display: true,
+        color: 'white',
+       },
+       font: {
+              weight: 'bold'
+            }
+      }
+      }
+      
       return(
     <div>
     <div id="chart" className={CategoriesPanel}>
-    <Pie style={{"fontSize" : "20px" }}data={data} options={pieOptions}/>
+    <div style={{"display" : "flex"}}>
+    <Pie style={{"fontSize" : "20px" }} data={data} options={pieOptions}/>
+    <HorizontalBar
+          ref='chart'
+          data={bardata}
+          width={100}
+          height={50}
+           options={{
+            maintainAspectRatio: false
+            
+          }}
+        />
+    </div>
+     </div>
     <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
-    <button onClick={this.update} className="chartButton">Update Information</button></div>
-     
      <div className="clear">
-     
      <List parentToggle={this.doParentToggle} />
      <ListSecond parentToggle={this.doParentToggle} />
      <ListThird parentToggle={this.doParentToggle} />
