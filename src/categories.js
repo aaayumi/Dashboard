@@ -172,11 +172,6 @@ class QuestionItem extends React.Component {
     }
 
     renderName() {
-        const itemStyle = {
-            'text-decoration' : this.props.completed ? 'line-through' : 'none',
-             cursor : 'pointer'
-        };
-
         if(this.state.editing) {
             return (
                 <form onSubmit={this.onSaveClick.bind(this)}>
@@ -186,8 +181,7 @@ class QuestionItem extends React.Component {
         }
 
         return(
-        <span style={itemStyle}>
-        {this.props.id} {this.props.item}</span>);
+        <span> {this.props.item}</span>);
     }
 
     renderButtons() {
@@ -283,12 +277,10 @@ class List extends React.Component {
           }
      this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
      this.counter = 0;
-     this.doParentToggleFromChild = this.doParentToggleFromChild.bind(this);
     }
 
     doParentToggleFromChild(){  
      this.props.parentToggle();
-     this.props.update();
    }
 
     createItem(item){
@@ -326,9 +318,10 @@ class List extends React.Component {
 
     deleteItem(item) {
         let index = this.state.questionItem.map(element => element.item).indexOf(item);
-        this.state.questionItem.splice(index, 1);
+        let length1 = this.state.questionItem;
+        length1.splice(index, 1);
          this.setState({
-            questionItem : this.state.questionItem
+            questionItem : length1
         });
         piData = this.state.questionItem.length;
         this.setState({
@@ -345,7 +338,7 @@ class List extends React.Component {
         <div>
        
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "orange", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Advice + FAQ  </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItem.length } />
+        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "#EB984E", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "30px", "marginTop": "20px"}} > Category 1 </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItem.length } />
         </div>
 
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
@@ -523,8 +516,7 @@ class QuestionItemSecond extends React.Component {
         }
 
         return(
-        <span style={itemStyle}>
-        {this.props.id} {this.props.item}</span>);
+        <span style={itemStyle}> {this.props.item}</span>);
     }
 
     renderButtons() {
@@ -618,7 +610,7 @@ class ListSecond extends React.Component {
     
    doParentToggleFromChild(){  
      this.props.parentToggle();
-     this.props.update();
+     
    }
 
     createItem(item){
@@ -674,7 +666,7 @@ class ListSecond extends React.Component {
         return(
         <div>
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement"  style={{"flex": "1", "backgroundColor" : "blue", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Product Recs </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}}length={ questionItemSecond.length } /></div>
+        <div className="titleElement"  style={{"flex": "1", "backgroundColor" : "#5DADE2", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "30px", "marginTop": "20px"}} > Category 2</div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}}length={ questionItemSecond.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionListSecond questionItemSecond={this.state.questionItemSecond} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild } />
         <CreateItemSecond questionItemSecond={this.state.questionItemSecond} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild } />
@@ -836,8 +828,7 @@ class QuestionItemThird extends React.Component {
         }
 
         return(
-        <span style={itemStyle}>
-        {this.props.id} {this.props.item}</span>);
+        <span style={itemStyle}> {this.props.item}</span>);
     }
 
     renderButtons() {
@@ -983,7 +974,7 @@ class ListThird extends React.Component {
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "red", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Update</div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemThird.length } /></div>
+        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "#EC7063", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "30px", "marginTop": "20px"}} > Category 3</div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemThird.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionListThird questionItemThird={this.state.questionItemThird} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild }/>
         <CreateItemThird questionItemThird={this.state.questionItemThird} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild } />
@@ -1143,8 +1134,7 @@ class QuestionItemFourth extends React.Component {
         }
 
         return(
-        <span style={itemStyle}>
-        {this.props.id} {this.props.item}</span>);
+        <span style={itemStyle}> {this.props.item}</span>);
     }
 
     renderButtons() {
@@ -1289,7 +1279,7 @@ class ListFourth extends React.Component {
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "purple","color": "white", "textAlign": "center", "width": "150px"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Complaint</div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemFourth.length } /></div>
+        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "#A569BD","color": "white", "textAlign": "center", "width": "150px"}}><div style={{"fontSize": "30px", "marginTop": "20px"}} > Category 4 </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemFourth.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionListFourth questionItemFourth={this.state.questionItemFourth} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild } />
         <CreateItemFourth questionItemFourth={this.state.questionItemFourth} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild } />
@@ -1436,11 +1426,6 @@ class QuestionItemFifth extends React.Component {
     }
 
     renderName() {
-        const itemStyle = {
-            'text-decoration' : this.props.completed ? 'line-through' : 'none',
-             cursor : 'pointer'
-        };
-
         if(this.state.editing) {
             return (
                 <form onSubmit={this.onSaveClick.bind(this)}>
@@ -1450,16 +1435,15 @@ class QuestionItemFifth extends React.Component {
         }
 
         return(
-        <span style={itemStyle}>
-        {this.props.id} {this.props.item}</span>);
+        <span> {this.props.item} </span>);
     }
 
     renderButtons() {
         if(this.state.editing) {
             return (
                 <span>
-                <div className="saveSample" onClick={this.onSaveClick.bind(this)}><img src={Check} className="edit" alt="edit"/></div>
-                <div className="cancelSample" onClick={this.onCancelClick.bind(this)}><img src={Fail} className="edit" alt="edit"/></div>
+                <div className="saveSample" onClick={this.onSaveClick.bind(this)}><img src={Check} className="check" alt="edit"/></div>
+                <div className="cancelSample" onClick={this.onCancelClick.bind(this)}><img src={Fail} className="fail" alt="edit"/></div>
                 </span>
                 );
         }
@@ -1596,7 +1580,7 @@ class ListFifth extends React.Component {
         return (
         <div>
         <div className="list" style={{"display" : "flex"}}>
-        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "green", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "50px", "marginTop": "20px"}} > Others </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemFifth.length } /></div>
+        <div className="titleElement" style={{"flex": "1", "backgroundColor" : "#52BE80", "color": "white", "textAlign": "center"}}><div style={{"fontSize": "30px", "marginTop": "20px"}} > Category 5 </div><Chart style={{"color": "white", "fontSize": "20px", "position": "absolute"}} length={ questionItemFifth.length } /></div>
         <div style={{"flex": "5", "display": "flex", "flex-direction": "column"}}>
         <QuestionListFifth questionItemFifth={this.state.questionItemFifth} deleteItem={this.deleteItem.bind(this)}  saveItem={this.saveItem.bind(this)} toggleComplete={this.toggleComplete.bind(this)} onClick={ this.doParentToggleFromChild }/>
         <CreateItemFifth questionItemFifth={this.state.questionItemFifth} createItem={this.createItem.bind(this)} onClick={ this.doParentToggleFromChild }/>
@@ -1624,23 +1608,21 @@ class ListFifth extends React.Component {
     }
 
     doParentToggle(){
-    
-
-    this.setState({
+    var piData;
+      this.setState({
         piData : piData
       })
-      console.log('-------')
-      console.log('parentToggle' + piData )
-      console.log('parentToggle' + piData2 )
-      console.log('parentToggle' + piData3 )
-      console.log('-------')
-      this.update();
    }
 
     handleClick(){
         this.setState({
             slideOpen : !this.state.slideOpen
         })
+        console.log('-------')
+      console.log('parentToggle' + piData )
+      console.log('parentToggle' + piData2 )
+      console.log('parentToggle' + piData3 )
+      console.log('-------')
     }
     
     update() {
@@ -1684,18 +1666,18 @@ class ListFifth extends React.Component {
       datasets: [{
         data: [ newpiData() , newpiData2(), newpiData3(), newpiData4(), newpiData5()],
         backgroundColor: [
-        'orange',
-        'blue',
-        'red',
-        'purple',
-        'green'
+        '#EB984E',
+        '#5DADE2',
+        '#EC7063  ',
+        '#A569BD',
+        '#52BE80'
         ],
         borderColor: [ 
-        'orange',
-        'blue',
-        'red',
-        'purple',
-        'green'
+        '#EB984E',
+        '#5DADE2',
+        '#EC7063  ',
+        '#A569BD',
+        '#52BE80'
         ]
       }]};
 
@@ -1704,64 +1686,83 @@ class ListFifth extends React.Component {
          render: function (args) {
                   return args.value + '%';
                 },
-         fontSize: 30,
+         fontSize: 20,
          fontColor: '#fff'
-       }
+       },
+       plugins: {
+        datalabels: {
+          display: false
+        }
+      },
+       tooltips: {
+               enabled: false
+               }
       };
 
       const bardata = {
-      labels: ['1', '2', '3', '4', '5'],
+      labels: ['', '', '', '', ''],
       datasets: [
        {
+      label: false,
       backgroundColor: [
-        'orange',
-        'blue',
-        'red',
-        'purple',
-        'green'
+        '#EB984E',
+        '#7FB3D5  ',
+        '#EC7063  ',
+        '#A569BD',
+        '#52BE80'
         ],
-      borderColor: 'black',
       borderWidth: 1,
-      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-      hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [ newpiData(), newpiData2() , newpiData3()  , newpiData4()  , newpiData5()  ]
+      hoverBackgroundColor:[
+        '#EB984E',
+        '#7FB3D5',
+        '#EC7063  ',
+        '#A569BD',
+        '#52BE80'
+        ],
+      data: [ piData, piData2, piData3, piData4, piData5  ]
       }
       ]
       };
    
-      let options = {
-        plugins: {
-        datalabels: {
-        display: true,
-        color: 'white',
-       },
-       font: {
-              weight: 'bold'
-            }
-      }
-      }
-      
       return(
     <div>
     <div id="chart" className={CategoriesPanel}>
     <div style={{"display" : "flex"}}>
-    <Pie style={{"fontSize" : "20px" }} data={data} options={pieOptions}/>
+    <Pie style={{"fontSize" : "15px" }} data={data} options={pieOptions}/>
     <HorizontalBar
           ref='chart'
           data={bardata}
           width={100}
           height={50}
            options={{
-            maintainAspectRatio: false
-            
-          }}
+                maintainAspectRatio: false,
+                scales: {
+                  xAxes: [{
+                    ticks: {
+                      beginAtZero: true
+                    }
+                  }]
+                },
+                plugins: {
+                datalabels: {
+                display: true,
+                color: 'white'
+                }
+                },
+                tooltips: {
+               enabled: false
+               },
+               legend: {
+        display: false
+        }
+              }}
         />
     </div>
      </div>
     <div className="categoriesSlide" onClick={this.handleClick}>{this.state.slideOpen? <img src={Arrowup} alt="arrowup" className="arrowup" /> : <img src={Arrowdown} alt="arrowdown" className="arrowdown"/>}</div>
      <div className="clear">
      <List parentToggle={this.doParentToggle} />
-     <ListSecond parentToggle={this.doParentToggle} />
+     <ListSecond parentToggle={this.doParentToggle}  />
      <ListThird parentToggle={this.doParentToggle} />
      <ListFourth parentToggle={this.doParentToggle} />
      <ListFifth parentToggle={this.doParentToggle} />
